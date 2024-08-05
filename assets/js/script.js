@@ -1,5 +1,9 @@
 const input = document.getElementById('inputBox');
 
+/**
+ * Adds a new task to the task list
+ * Clears add a task for field.
+ */
 function addTask() {
     let newTask = document.getElementById('inputBox').value;
     let newListItem = document.createElement("li");
@@ -10,7 +14,13 @@ function addTask() {
     } else {
     newListItem.textContent = newTask;
     list[0].appendChild(newListItem);
+    newListItem.setAttribute("onclick", "completedTask()");
     }
 
     document.getElementById("inputBox").value = "";
+}
+
+function completedTask() {
+    let lastClicked
+    classList.add("completed")
 }
