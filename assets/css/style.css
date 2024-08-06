@@ -70,7 +70,7 @@ ul li {
 ul li::before {
     content: '';
     position: absolute;
-    background-image: url("../images/home-button_15990251.png");
+    background-image: url("../images/circle-regular.svg");
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -78,6 +78,15 @@ ul li::before {
     background-position: center;
     left: 0px;
     top: 5px;
+}
+
+li span {
+    position: relative;
+    left: 85%;
+}
+
+ul li::after :hover {
+    color: rgba(128, 128, 128, 0.733);
 }
 
 .completed {
@@ -88,7 +97,7 @@ ul li::before {
 .completed::before {
     content: '';
     position: absolute;
-    background-image: url("../images/check-mark_1264396.png");
+    background-image: url("../images/circle-solid.svg");
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -97,3 +106,4 @@ ul li::before {
     left: 0px;
     top: 5px;
 }
+
