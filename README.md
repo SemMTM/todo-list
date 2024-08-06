@@ -7,4 +7,5 @@
 - How to set a HTML attribute via JavaScript: https://www.w3schools.com/jsref/met_element_setattribute.asp
 - How to use toggle event: https://www.w3schools.com/howto/howto_js_toggle_class.asp
 - How to use the event property: https://www.w3schools.com/jsref/event_target.asp
+- Code for adding a task on enter click is from the 'Love Maths' project
 

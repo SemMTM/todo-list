@@ -1,6 +1,20 @@
 const input = document.getElementById('inputBox');
 
 /**
+ * Add listener for a click of enter button so tasks can be 
+ * submitted with Enter press.
+ */
+document.addEventListener("DOMContentLoaded", function() {
+    let buttons = document.getElementsByTagName('button');
+
+    input.addEventListener('keydown', function(event){
+        if (event.key === 'Enter') {
+            addTask();
+        }
+    })
+})
+
+/**
  * Adds a new task to the task list
  * Clears add a task for field.
  */
@@ -25,15 +39,17 @@ function addTask() {
 /**
  * Toggles 'complete' class so clicked on tasks
  * are marked as completed.
- * Also deletes tasks when x is clicked
+ * Deletes tasks when x is clicked.
  */
 function completeTask(event) {
     let completedTask = event.target;
+    let listParent = document.getElementsByTagName('ul');
      
     if (completedTask.tagName !== "LI") {
         completedTask.parentNode.remove();
     } else {
         completedTask.classList.toggle('completed');
+        listParent[0].appendChild(completedTask);
     }
      
 }
