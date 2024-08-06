@@ -80,13 +80,19 @@ ul li::before {
     top: 5px;
 }
 
-li span {
-    position: relative;
-    left: 85%;
+li span { 
+    content: 'X';
+    position: absolute;
+    right: 0;
+    background-image: url("../images/circle-xmark-regular.svg");
+    background-size: 17px 17px;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px 10px;
 }
 
-ul li::after :hover {
-    color: rgba(128, 128, 128, 0.733);
+li span:hover {
+    background-color: rgba(88, 88, 88, 0.164);
 }
 
 .completed {

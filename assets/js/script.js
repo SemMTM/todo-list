@@ -16,7 +16,6 @@ function addTask() {
     newListItem.textContent = newTask;
     list[0].appendChild(newListItem);
     newListItem.setAttribute("onclick", "completeTask(event)");
-    deleteTask.innerHTML = '<i class="fa-regular fa-circle-xmark"></i>'
     newListItem.appendChild(deleteTask);
     }
 
@@ -26,9 +25,15 @@ function addTask() {
 /**
  * Toggles 'complete' class so clicked on tasks
  * are marked as completed.
+ * Also deletes tasks when x is clicked
  */
 function completeTask(event) {
     let completedTask = event.target;
-
-    completedTask.classList.toggle('completed');
+     
+    if (completedTask.tagName !== "LI") {
+        completedTask.parentNode.remove();
+    } else {
+        completedTask.classList.toggle('completed');
+    }
+     
 }
