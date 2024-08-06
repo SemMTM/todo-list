@@ -47,8 +47,11 @@ function completeTask(event) {
      
     if (completedTask.tagName !== "LI") {
         completedTask.parentNode.remove();
-    } else {
+    } else if (completedTask.classList == '') {
         completedTask.classList.toggle('completed');
+        listParent[1].appendChild(completedTask);
+    } else if (completedTask.classList == 'completed') {
+        completedTask.classList.remove('completed');
         listParent[0].appendChild(completedTask);
     }
      

@@ -14,6 +14,14 @@ h3 {
     padding: 10px 0;
 }
 
+.hidden {
+    display: none;
+}
+
+.active {
+    display: inline;
+}
+
 /* Main Container Styles */
 #mainContainer {
     background-color: white;
@@ -62,7 +70,7 @@ h3 {
 }
 
 /* List Section Styles */
-#tasks, #tasks2 {
+#tasks, #completed-tasks-list {
     margin: 0 10px;
 }
 
@@ -87,7 +95,6 @@ ul li::before {
 }
 
 li span { 
-    content: 'X';
     position: absolute;
     right: 0;
     background-image: url("../images/circle-xmark-regular.svg");
@@ -119,3 +126,15 @@ li span:hover {
     top: 5px;
 }
 
+.incomplete {
+    content: '';
+    position: absolute;
+    background-image: url("../images/circle-regular.svg");
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    left: 0px;
+    top: 5px;
+}
