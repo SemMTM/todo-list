@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
  * Clears add a task for field.
  */
 function addTask() {
+    
     let deleteTask = document.createElement('span');
     let newTask = document.getElementById('inputBox').value;
     let newListItem = document.createElement("li");
@@ -34,6 +35,7 @@ function addTask() {
     }
 
     document.getElementById("inputBox").value = "";
+    saveTasks()
 }
 
 /**
@@ -42,17 +44,32 @@ function addTask() {
  * Deletes tasks when x is clicked.
  */
 function completeTask(event) {
+
     let completedTask = event.target;
     let listParent = document.getElementsByTagName('ul');
      
     if (completedTask.tagName !== "LI") {
         completedTask.parentNode.remove();
+        saveTasks()
     } else if (completedTask.classList == '') {
         completedTask.classList.toggle('completed');
         listParent[1].appendChild(completedTask);
+        saveTasks()
     } else if (completedTask.classList == 'completed') {
         completedTask.classList.remove('completed');
         listParent[0].appendChild(completedTask);
+        saveTasks()
     }
-     
 }
+
+function saveTasks() {
+    let taskList = document.getElementById('incompleteTasks');
+    localStorage.setItem("taskData", taskList.innerHTML);
+}
+
+function getTasks() {
+    let taskList = document.getElementById('incompleteTasks');
+    taskList.innerHTML = localStorage.getItem("taskData");
+}
+
+getTasks()
