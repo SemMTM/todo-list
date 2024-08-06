@@ -1,4 +1,5 @@
 const input = document.getElementById('inputBox');
+let currentTasks = document.getElementById('incompleteTasks');
 
 /**
  * Add listener for a click of enter button so tasks can be 
@@ -62,14 +63,15 @@ function completeTask(event) {
     }
 }
 
+/**
+ * Functions to save task data locally and retrieve it
+ */
 function saveTasks() {
-    let taskList = document.getElementById('incompleteTasks');
-    localStorage.setItem("taskData", taskList.innerHTML);
+    localStorage.setItem("taskData", currentTasks.innerHTML);
 }
 
 function getTasks() {
-    let taskList = document.getElementById('incompleteTasks');
-    taskList.innerHTML = localStorage.getItem("taskData");
+    currentTasks.innerHTML = localStorage.getItem("taskData");
 }
 
 getTasks()
