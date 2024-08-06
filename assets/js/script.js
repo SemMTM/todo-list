@@ -14,13 +14,14 @@ function addTask() {
     } else {
     newListItem.textContent = newTask;
     list[0].appendChild(newListItem);
-    newListItem.setAttribute("onclick", "completedTask()");
+    newListItem.setAttribute("onclick", "completeTask(event)");
     }
 
     document.getElementById("inputBox").value = "";
 }
 
-function completedTask() {
-    let lastClicked
-    classList.add("completed")
+function completeTask(event) {
+    let completedTask = event.target;
+
+    completedTask.classList.toggle('completed');
 }
