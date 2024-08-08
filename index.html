@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,28 +12,39 @@
 </head>
 
 <body>
-    <main id="mainContainer">
-        <div>
-            <h1 contenteditable="true" id="mainTitle">To-Do List <i class="fa-solid fa-list"></i></h1>  
+    <main id="outerContainer">
+        
+        <!-- Tasks Counter -->
+        <div id="tasksCounter">
+            <span>Tasks left</span>
+            <span>Tasks completed</span>
         </div>
-        <div id="tasks">
-            <ul id="incompleteTasks">
-                <!-- Will be populated with tasks submitted by the user -->
-            </ul>
-        </div>
-        <div>
-            <ul id="completed-tasks-list">
-                <!-- Will be populated with completed tasks -->
-            </ul>
-        </div>
-        <div id="row">
-            <input type="text" id="inputBox" placeholder="Add a task">
-            <button id="addBtn" onclick="addTask()">Add</button>
+
+        <!-- Main tasks list section -->
+        <div id="mainContainer">
+            <div>
+                <h1 contenteditable="true" id="mainTitle">To-Do List <i class="fa-solid fa-list"></i></h1>
+            </div>
+            <div id="tasks">
+                <ul id="incompleteTasks">
+                    <!-- Will be populated with tasks submitted by the user -->
+                </ul>
+            </div>
+            <div>
+                <ul id="completed-tasks-list">
+                    <!-- Will be populated with completed tasks -->
+                </ul>
+            </div>
+            <div id="row">
+                <input type="text" id="inputBox" placeholder="Add a task">
+                <button id="addBtn" onclick="addTask()">Add</button>
+            </div>
         </div>
     </main>
 
     <!-- Scripts -->
-    <script src="https://kit.fontawesome.com/4c5f306c01.js" crossorigin="anonymous"></script> 
-    <script src="./assets/js/script.js"></script>   
+    <script src="https://kit.fontawesome.com/4c5f306c01.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
