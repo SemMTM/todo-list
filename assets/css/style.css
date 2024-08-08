@@ -163,17 +163,22 @@ li span:hover {
 
 /* Media Query for mobile */
 @media screen and (max-width: 480px) {
+    body {
+        width: 100%;
+    }
+    
     #outerContainer {
         flex-direction: column;
         width: 100vw;
     }
 
     #tasksCounter {
-        width: 100vw;
         margin: 0;
+        align-self: center;
     }
 
     #mainContainer{
         width: 350px;
+        padding: 10px;
     }
 }
