@@ -175,15 +175,14 @@ li span:hover {
         flex-direction: column;
         margin: 0;
         width: 100%;
-        min-height: 100vh;
     }
 
     #mainContainer {
         box-sizing: border-box;
         margin: 0;
         padding: 20px;
-        max-width: 100%;
-        min-height: 90vh;
+        width: 80%;
+        min-height: 60vh;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -194,14 +193,17 @@ li span:hover {
         box-sizing: border-box;
         margin-top: auto;
         margin-bottom: 0;
+        position: sticky;
+        bottom: 60px;
     }
 
     #tasksCounter {
         margin: 0px;
-        flex-grow: 1;
         border-radius: 0;
         box-sizing: border-box;
         order: 0;
-        width: 100%;
+        width: 80%;
+        align-self: center;
+        margin-top: 20px;
     }
 }
