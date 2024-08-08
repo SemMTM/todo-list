@@ -59,7 +59,7 @@ function completeTask(event) {
     if (completedTask.tagName !== "LI") {
         completedTask.parentNode.remove();
         saveTasks();
-        saveTitle();
+        //saveTitle();
         tasksLeft();
         tasksCompleted()
 
@@ -69,7 +69,7 @@ function completeTask(event) {
         audioPlay();
         listParent[1].appendChild(completedTask);
         saveTasks();
-        saveTitle();
+        //saveTitle();
         tasksLeft();
         tasksCompleted()
 
@@ -78,7 +78,7 @@ function completeTask(event) {
         completedTask.classList.remove('completed');
         listParent[0].appendChild(completedTask);
         saveTasks();
-        saveTitle();
+        //saveTitle();
         tasksLeft();
         tasksCompleted()
     }
@@ -118,15 +118,15 @@ getTasks();
 /**
  * Save and call custom to-do list title 
  */
-function saveTitle () {
-    localStorage.setItem("titleData", title.innerHTML);
-}
+// function saveTitle () {
+//    localStorage.setItem("titleData", title.innerHTML);
+//}
 
-function getTitle() {
-    title.innerHTML = localStorage.getItem("titleData")
-}
+// function getTitle() {
+//    title.innerHTML = localStorage.getItem("titleData")
+//}
 
-getTitle();
+// getTitle();
 
 /**
  * Ding Audio that plays on task complete
