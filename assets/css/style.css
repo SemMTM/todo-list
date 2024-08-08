@@ -155,9 +155,8 @@ li span:hover {
 #tasksCounter {
     padding: 10px;
     background-color: white;
-    width: 140px;
-    height: 90px;
     border-radius: 5px;
     order: 1;
-    margin: 10px;
+    margin: 100px 10px 10px 10px;
+    align-self: flex-start;
 }

@@ -9,6 +9,9 @@ let title = document.getElementById('mainTitle');
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName('button');
 
+    tasksLeft()
+    tasksCompleted()
+
     input.addEventListener('keydown', function(event){
         if (event.key === 'Enter') {
             addTask();
@@ -37,7 +40,9 @@ function addTask() {
     }
 
     document.getElementById("inputBox").value = "";
-    saveTasks()
+    saveTasks();
+    tasksLeft();
+    tasksCompleted()
 }
 
 /**
@@ -49,30 +54,56 @@ function completeTask(event) {
 
     let completedTask = event.target;
     let listParent = document.getElementsByTagName('ul');
-     
+    
+    // If a task is deleted
     if (completedTask.tagName !== "LI") {
         completedTask.parentNode.remove();
         saveTasks();
         saveTitle();
+        tasksLeft();
+        tasksCompleted()
+
+    // If a task is marked as completed    
     } else if (completedTask.classList == '') {
         completedTask.classList.toggle('completed');
         audioPlay();
         listParent[1].appendChild(completedTask);
         saveTasks();
         saveTitle();
+        tasksLeft();
+        tasksCompleted()
+
+    // If a task is unmarked as completed    
     } else if (completedTask.classList == 'completed') {
         completedTask.classList.remove('completed');
         listParent[0].appendChild(completedTask);
         saveTasks();
         saveTitle();
+        tasksLeft();
+        tasksCompleted()
     }
+}
+
+function tasksLeft() {
+    let tasksLeft = document.getElementById("incompleteTasks").getElementsByTagName("li");
+    let tasksLeftLength = tasksLeft.length;
+    let tasksLeftCounter = document.getElementById("tasksLeft");
+
+    tasksLeftCounter.textContent = tasksLeftLength;
+}
+
+function tasksCompleted() {
+    let completedTasks = document.getElementById("completed-tasks-list").getElementsByTagName("li");
+    let completedTasksLength = completedTasks.length;
+    let completedTasksCounter = document.getElementById("tasksCompleted");
+
+    completedTasksCounter.textContent = completedTasksLength;
 }
 
 /**
  * Functions to save task data locally and retrieve it
  */
 function saveTasks() {
-
     localStorage.setItem("taskData", currentTasks.innerHTML);
 }
 
