@@ -21,7 +21,7 @@ body {
     background-color: #151515;
 }
 
-h1 {
+#mainTitle {
     font-size: 26px;
     font-weight: 500;
     padding-bottom: 17px;
@@ -171,7 +171,7 @@ li span:hover {
 
 /* Media Query for mobile */
 @media screen and (max-width: 425px) {
-    h1 {
+    #mainTitle {
         font-size: 21px;
         padding-bottom: 9px;
     }
@@ -192,6 +192,8 @@ li span:hover {
         flex-direction: column;
         border-radius: 0px;
         margin-top: 20px;
+        border-top-right-radius: 5px;
+        border-top-left-radius:5px;
     }
 
     #row {
@@ -207,13 +209,13 @@ li span:hover {
         width: 90%;
         align-self: center;
         margin-top: 0px;
+        padding-top: 0px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
     }
 
     #addBtn {
         font-size: 16px;
     }
 
-    #tasksCounter {
-        padding-top: 0px;
-    }
 }
