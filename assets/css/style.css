@@ -21,7 +21,7 @@ body {
     background-color: #151515;
 }
 
-#mainTitle {
+h1 {
     font-size: 26px;
     font-weight: 500;
     padding-bottom: 17px;
@@ -171,7 +171,7 @@ li span:hover {
 
 /* Media Query for mobile */
 @media screen and (max-width: 425px) {
-    #mainTitle {
+    h1 {
         font-size: 21px;
         padding-bottom: 9px;
     }
