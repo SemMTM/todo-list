@@ -161,15 +161,15 @@ li span:hover {
     align-self: flex-start;
 }
 
-/* Media Queries */
+/* Media Query for mobile */
 @media screen and (max-width: 480px) {
     #outerContainer {
         flex-direction: column;
-        width: 100%;
+        width: 100vw;
     }
 
     #tasksCounter {
-        width: 100%;
+        width: 100vw;
         margin: 0;
     }
 
