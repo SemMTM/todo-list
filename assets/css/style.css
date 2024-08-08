@@ -175,6 +175,7 @@ li span:hover {
         flex-direction: column;
         margin: 0;
         width: 100%;
+        min-height: 100vh;
     }
 
     #mainContainer {
@@ -182,15 +183,25 @@ li span:hover {
         margin: 0;
         padding: 20px;
         max-width: 100%;
-        min-height: 400px;
+        min-height: 90vh;
         position: relative;
         display: flex;
         flex-direction: column;
+        border-radius: 0px;
     }
 
     #row {
         box-sizing: border-box;
         margin-top: auto;
         margin-bottom: 0;
+    }
+
+    #tasksCounter {
+        margin: 0px;
+        flex-grow: 1;
+        border-radius: 0;
+        box-sizing: border-box;
+        order: 0;
+        width: 100%;
     }
 }
