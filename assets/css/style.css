@@ -13,6 +13,10 @@ body, html {
     font-family: 'Montserrat', sans-serif;
 }
 
+input {
+    font-size: 16px;
+}
+
 body {
     background-color: #151515;
 }
@@ -171,6 +175,11 @@ li span:hover {
 
 /* Media Query for mobile */
 @media screen and (max-width: 425px) {
+    h1 {
+        font-size: 21px;
+        padding-bottom: 9px;
+    }
+
     #outerContainer {
         flex-direction: column;
         margin: 0;
@@ -180,21 +189,18 @@ li span:hover {
     #mainContainer {
         box-sizing: border-box;
         margin: 0;
-        padding: 20px;
-        width: 80%;
-        min-height: 60vh;
+        padding: 10px;
+        width: 90%;
         position: relative;
         display: flex;
         flex-direction: column;
         border-radius: 0px;
+        margin-top: 20px;
     }
 
     #row {
         box-sizing: border-box;
-        margin-top: auto;
         margin-bottom: 0;
-        position: sticky;
-        bottom: 60px;
     }
 
     #tasksCounter {
@@ -202,8 +208,8 @@ li span:hover {
         border-radius: 0;
         box-sizing: border-box;
         order: 0;
-        width: 80%;
+        width: 90%;
         align-self: center;
-        margin-top: 20px;
+        margin-top: 0px;
     }
 }
