@@ -1,4 +1,12 @@
 /* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -162,31 +170,27 @@ li span:hover {
 }
 
 /* Media Query for mobile */
-@media screen and (max-width: 480px) {
-    body {
-        width: 100%;
-    }
-    
+@media screen and (max-width: 425px) {
     #outerContainer {
         flex-direction: column;
-        width: 100vw;
+        margin: 0;
+        width: 100%;
     }
 
-    #tasksCounter {
-        margin: 10px 0 0 0;
-        align-self: center;
-        width: 90%
-    }
-
-    #mainContainer{
-        width: 85%;
-        margin: 25px 0;
-        min-height: 350px;
+    #mainContainer {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 20px;
+        max-width: 100%;
+        min-height: 400px;
+        position: relative;
         display: flex;
         flex-direction: column;
     }
 
     #row {
+        box-sizing: border-box;
         margin-top: auto;
+        margin-bottom: 0;
     }
 }
