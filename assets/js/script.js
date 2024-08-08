@@ -1,5 +1,6 @@
 const input = document.getElementById('inputBox');
 let currentTasks = document.getElementById('incompleteTasks');
+let title = document.getElementById('mainTitle');
 
 /**
  * Add listener for a click of enter button so tasks can be 
@@ -51,15 +52,19 @@ function completeTask(event) {
      
     if (completedTask.tagName !== "LI") {
         completedTask.parentNode.remove();
-        saveTasks()
+        saveTasks();
+        saveTitle();
     } else if (completedTask.classList == '') {
         completedTask.classList.toggle('completed');
+        audioPlay();
         listParent[1].appendChild(completedTask);
-        saveTasks()
+        saveTasks();
+        saveTitle();
     } else if (completedTask.classList == 'completed') {
         completedTask.classList.remove('completed');
         listParent[0].appendChild(completedTask);
-        saveTasks()
+        saveTasks();
+        saveTitle();
     }
 }
 
@@ -67,11 +72,33 @@ function completeTask(event) {
  * Functions to save task data locally and retrieve it
  */
 function saveTasks() {
+
     localStorage.setItem("taskData", currentTasks.innerHTML);
 }
 
 function getTasks() {
+    let title = document.getElementsByTagName('h1');
+
     currentTasks.innerHTML = localStorage.getItem("taskData");
 }
 
-getTasks()
+getTasks();
+
+
+/**
+ * Save and call custom to-do list title 
+ */
+function saveTitle () {
+    localStorage.setItem("titleData", title.innerHTML);
+}
+
+function getTitle() {
+    title.innerHTML = localStorage.getItem("titleData")
+}
+
+getTitle();
+
+function audioPlay(){
+    const audio = new Audio("../assets/audio/ding-sound-effect.mp3");
+    audio.play();
+}
