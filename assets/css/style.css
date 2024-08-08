@@ -160,3 +160,17 @@ li span:hover {
     margin: 100px 10px 10px 10px;
     align-self: flex-start;
 }
+
+/* Media Queries */
+@media screen and (max-width: 480px) {
+    #outerContainer {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #tasksCounter {
+        width: 100%;
+        margin: 0;
+    }
+
+}
