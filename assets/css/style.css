@@ -173,4 +173,7 @@ li span:hover {
         margin: 0;
     }
 
+    #mainContainer{
+        width: 350px;
+    }
 }
