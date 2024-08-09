@@ -1,3 +1,4 @@
+// Global Variables
 const input = document.getElementById('inputBox');
 let currentTasks = document.getElementById('incompleteTasks');
 let title = document.getElementById('mainTitle');
