@@ -16,17 +16,21 @@
         <!-- Main tasks list section -->
         <div id="mainContainer">
             <div>
-                <h1 id="mainTitle">To-Do List <i class="fa-solid fa-list"></i></h1>
+                <h1 class="hidden">To-Do List</h1>
+                <p id="mainTitle" contenteditable="true"></p><i class="fa-solid fa-list"></i>
             </div>
+
             <div id="row">
                 <input type="text" id="inputBox" placeholder="Add a task">
-                <button id="addBtn" onclick="addTask()">Add</button>
+                <button id="addBtn" onclick="addTask()" aria-label="add a task to the to do list">Add</button>
             </div>
+
             <div id="tasks">
                 <ul id="incompleteTasks">
                     <!-- Will be populated with tasks submitted by the user -->
                 </ul>
             </div>
+
             <div>
                 <ul id="completed-tasks-list">
                     <!-- Will be populated with completed tasks -->

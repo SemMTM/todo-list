@@ -21,10 +21,21 @@ body {
     background-color: #151515;
 }
 
-h1 {
+.hidden {
+    display: none;
+}
+
+/* Title Styles */
+#mainTitle {
     font-size: 26px;
     font-weight: 500;
     padding-bottom: 17px;
+    display: inline;
+}
+
+i {
+    font-size: 24px;
+    padding-left: 10px;
 }
 
 h3 {
@@ -61,8 +72,6 @@ h3 {
     border-radius: 5px;
     height: 45px;
     margin: 20px 0px;
-    position: relative;
-    bottom: 10px;
 }
 
 #inputBox {
@@ -171,9 +180,10 @@ li span:hover {
 
 /* Media Query for mobile */
 @media screen and (max-width: 425px) {
-    h1 {
-        font-size: 21px;
+    #mainTitle {
+        font-size: 23px;
         padding-bottom: 9px;
+        cursor: text;
     }
 
     #outerContainer {
@@ -198,7 +208,7 @@ li span:hover {
 
     #row {
         box-sizing: border-box;
-        margin-bottom: 0;
+        margin-bottom: 12px;
     }
 
     #tasksCounter {

@@ -9,15 +9,17 @@ let title = document.getElementById('mainTitle');
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName('button');
 
-    tasksLeft()
-    tasksCompleted()
+    tasksLeft();
+    tasksCompleted();
+    saveTitle();
 
-    input.addEventListener('keydown', function(event){
+    input.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
             addTask();
+            saveTitle();
         }
-    })
-})
+    });
+});
 
 /**
  * Adds a new task to the task list
@@ -42,12 +44,12 @@ function addTask() {
     document.getElementById("inputBox").value = "";
     saveTasks();
     tasksLeft();
-    tasksCompleted()
+    saveTitle();
+    tasksCompleted();
 }
 
 /**
- * Toggles 'complete' class so clicked on tasks
- * are marked as completed.
+ * Toggles 'complete' class so clicked on tasks are marked as completed.
  * Deletes tasks when x is clicked.
  */
 function completeTask(event) {
@@ -59,9 +61,9 @@ function completeTask(event) {
     if (completedTask.tagName !== "LI") {
         completedTask.parentNode.remove();
         saveTasks();
-        //saveTitle();
+        saveTitle();
         tasksLeft();
-        tasksCompleted()
+        tasksCompleted();
 
     // If a task is marked as completed    
     } else if (completedTask.classList == '') {
@@ -69,21 +71,24 @@ function completeTask(event) {
         audioPlay();
         listParent[1].appendChild(completedTask);
         saveTasks();
-        //saveTitle();
+        saveTitle();
         tasksLeft();
-        tasksCompleted()
+        tasksCompleted();
 
     // If a task is unmarked as completed    
     } else if (completedTask.classList == 'completed') {
         completedTask.classList.remove('completed');
         listParent[0].appendChild(completedTask);
         saveTasks();
-        //saveTitle();
+        saveTitle();
         tasksLeft();
-        tasksCompleted()
+        tasksCompleted();
     }
 }
 
+/**
+ * Calcualtes the number of tasks left and updates the counter
+ */
 function tasksLeft() {
     let tasksLeft = document.getElementById("incompleteTasks").getElementsByTagName("li");
     let tasksLeftLength = tasksLeft.length;
@@ -92,6 +97,9 @@ function tasksLeft() {
     tasksLeftCounter.textContent = tasksLeftLength;
 }
 
+/**
+ * Calcualtes the number of tasks completed and updates the counter
+ */
 function tasksCompleted() {
     let completedTasks = document.getElementById("completed-tasks-list").getElementsByTagName("li");
     let completedTasksLength = completedTasks.length;
@@ -112,21 +120,28 @@ function getTasks() {
 
     currentTasks.innerHTML = localStorage.getItem("taskData");
 }
-
 getTasks();
 
 /**
  * Save and call custom to-do list title 
  */
-// function saveTitle () {
-//    localStorage.setItem("titleData", title.innerHTML);
-//}
+function saveTitle () {
+    if (title.textContent == ''){
+        title.textContent = 'My To-Do List';
+    } else {
+        localStorage.setItem("titleData", title.textContent);
+    }
+}
+saveTitle();
 
-// function getTitle() {
-//    title.innerHTML = localStorage.getItem("titleData")
-//}
-
-// getTitle();
+function getTitle() {
+    if (title.textContent == '') {
+        title.textContent = 'To-Do List';
+    } else {
+        title.textContent = localStorage.getItem("titleData");
+    }
+}
+getTitle();
 
 /**
  * Ding Audio that plays on task complete
