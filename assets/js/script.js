@@ -135,11 +135,7 @@ function saveTitle () {
 saveTitle();
 
 function getTitle() {
-    if (title.textContent == '') {
-        title.textContent = 'To-Do List';
-    } else {
-        title.textContent = localStorage.getItem("titleData");
-    }
+    title.textContent = localStorage.getItem("titleData");
 }
 getTitle();
 
@@ -147,6 +143,6 @@ getTitle();
  * Ding Audio that plays on task complete
  */
 function audioPlay(){
-    const audio = new Audio("../assets/audio/ding-sound-effect.mp3");
+    const audio = new Audio("./assets/audio/ding-sound-effect.mp3");
     audio.play();
 }
