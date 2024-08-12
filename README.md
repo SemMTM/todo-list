@@ -1,5 +1,5 @@
 # To-Do List
-This To-Do list web app is a simple yet effective way to track tasks that need to be done and can be used easily used by anyone for any tasks. It is simple by design for 2 reasons: 
+To-Do List is a JavaScript web app that is a simple yet effective way to track tasks that need to be done and can be easily used by anyone for any tasks. It is simple by design for 2 reasons: 
  - A To-Do list is something that does not need to be overly complicated. The focus should be on the tasks that need completeing.
  - It can be easily used by anyone, regardless of technical ability.
  
