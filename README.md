@@ -8,14 +8,14 @@ The purpose of this app is to allow a user to easily keep track of tasks that th
 Live link: https://semmtm.github.io/todo-list/
 
 
-![Responsive Design Screenshot](assets/images/readme-images/Screenshot_3.png)
+![Responsive Design Screenshot](assets/images/readme-images/Screenshot_12.png)
 
 
 ## Features
 ### Adding tasks to the task list
 - A large text input field that allows the user to enter a new task to add to the 'incomplete' task list.
 
-![Add a task bar](assets/images/readme-images/Screenshot_4.png)
+![Add a task bar](assets/images/readme-images/Screenshot_13.png)
 
 - An error is displayed if the field is left empty.
 
@@ -23,15 +23,15 @@ Live link: https://semmtm.github.io/todo-list/
 
 - The DOM is then updated with the task that the user entered. It is added to a 'incomplete tasks' list. These tasks can be added by clicking 'add' or by pressing enter. Once the task has been added, the 'add a task' field is cleared.
 
-![Tasks added to the list](assets/images/readme-images/Screenshot_6.png)
+![Tasks added to the list](assets/images/readme-images/Screenshot_14.png)
 
 - A cursor pointer is shown when a task is hovered over.
 
-### Task completion and deletion
+### Task completion and task delete
 
 - Tasks can be marked as complete by clicking anywhere on the task. Once a task is marked as complete, it is moved to a 'completed' task list and moved to the bottom of the list for clear separation. Tasks marked as complete are also lined through, greyed out, the circle is filled in and a 'ding' sound is played to add a sense of acomplishment at your recently completed task.
 
-![Tasks marked as complete](assets/images/readme-images/Screenshot_7.png)
+![Tasks marked as complete](assets/images/readme-images/Screenshot_15.png)
 
 - Tasks can also be unchecked. Once a task is unchecked, it is added back to the incomplete task list and moved to the bottom of that list. The score also updates accordingly.
 
