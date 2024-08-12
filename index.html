@@ -17,22 +17,22 @@
 </head>
 
 <body>
-    <main id="outerContainer">
+    <main id="outer-container">
         <!-- Main tasks list section -->
-        <div id="mainContainer">
+        <div id="main-container">
             <div>
                 <h1 class="hidden">To-Do List</h1>
-                <p id="mainTitle" contenteditable="true"></p><i class="fa-solid fa-list"></i>
+                <p id="main-title" contenteditable="true"></p><i class="fa-solid fa-list"></i>
             </div>
 
             <div id="row">
                 <input type="text" id="inputBox" placeholder="Add a task">
-                <button id="addBtn" onclick="addTask()" aria-label="add a task to the to do list">Add</button>
+                <button id="add-btn" onclick="addTask()" aria-label="add a task to the to do list">Add</button>
             </div>
 
             <div id="tasks">
                 <h2>Tasks</h2>
-                <ul id="incompleteTasks">
+                <ul id="incomplete-tasks">
                     <!-- Will be populated with tasks submitted by the user -->
                 </ul>
             </div>
@@ -45,10 +45,10 @@
         </div>
 
         <!-- Tasks Counter -->
-        <div id="tasksCounter">
-            <span><span id="tasksLeft"></span> Tasks left</span>
+        <div id="tasks-counter">
+            <span><span id="tasks-left"></span> Tasks left</span>
             <br>
-            <span><span id="tasksCompleted"></span> Tasks completed</span>
+            <span><span id="tasks-completed"></span> Tasks completed</span>
         </div>
     </main>
 

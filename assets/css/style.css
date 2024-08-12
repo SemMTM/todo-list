@@ -26,7 +26,7 @@ body {
 }
 
 /* Title Styles */
-#mainTitle {
+#main-title {
     font-size: 26px;
     font-weight: 500;
     padding-bottom: 17px;
@@ -48,7 +48,7 @@ h2 {
 }
 
 /* Outer container styles */
-#outerContainer {
+#outer-container {
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -58,7 +58,7 @@ h2 {
 }
 
 /* Main Container Styles */
-#mainContainer {
+#main-container {
     background-color: #3b3b3b;
     width: 100%;
     max-width: 450px;
@@ -89,7 +89,7 @@ h2 {
     color: #e9e9e9;
 }
 
-#addBtn {
+#add-btn {
     background-color: #000000;;
     outline: none;
     border: none;
@@ -101,7 +101,7 @@ h2 {
     font-weight: 500;
 }
 
-#addBtn:hover {
+#add-btn:hover {
     background-color: #2b2b2b;
 }
 
@@ -175,7 +175,7 @@ li span:hover {
 }
 
 /* Task Counter Styles */
-#tasksCounter {
+#tasks-counter {
     padding: 5px;
     background-color: #3b3b3b;
     border-radius: 5px;
@@ -187,19 +187,19 @@ li span:hover {
 
 /* Media Query for mobile */
 @media screen and (max-width: 425px) {
-    #mainTitle {
+    #main-title {
         font-size: 23px;
         padding-bottom: 9px;
         cursor: text;
     }
 
-    #outerContainer {
+    #outer-container {
         flex-direction: column;
         margin: 0;
         width: 100%;
     }
 
-    #mainContainer {
+    #main-container {
         box-sizing: border-box;
         margin: 0;
         padding: 0px;
@@ -218,7 +218,7 @@ li span:hover {
         margin-bottom: 12px;
     }
 
-    #tasksCounter {
+    #tasks-counter {
         margin: 0px;
         border-radius: 0;
         box-sizing: border-box;
@@ -229,7 +229,7 @@ li span:hover {
         padding: 0px;
     }
 
-    #addBtn {
+    #add-btn {
         font-size: 16px;
     }
 

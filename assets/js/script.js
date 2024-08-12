@@ -1,7 +1,7 @@
 // Global Variables
 const input = document.getElementById('inputBox');
-let currentTasks = document.getElementById('incompleteTasks');
-let title = document.getElementById('mainTitle');
+let currentTasks = document.getElementById('incomplete-tasks');
+let title = document.getElementById('main-title');
 
 /**
  * Add listener for a click of enter button so tasks can be 
@@ -91,9 +91,9 @@ function completeTask(event) {
  * Calcualtes the number of tasks left and updates the counter
  */
 function tasksLeft() {
-    let tasksLeft = document.getElementById("incompleteTasks").getElementsByTagName("li");
+    let tasksLeft = currentTasks.getElementsByTagName("li");
     let tasksLeftLength = tasksLeft.length;
-    let tasksLeftCounter = document.getElementById("tasksLeft");
+    let tasksLeftCounter = document.getElementById("tasks-left");
 
     tasksLeftCounter.textContent = tasksLeftLength;
 }
@@ -104,7 +104,7 @@ function tasksLeft() {
 function tasksCompleted() {
     let completedTasks = document.getElementById("completed-tasks-list").getElementsByTagName("li");
     let completedTasksLength = completedTasks.length;
-    let completedTasksCounter = document.getElementById("tasksCompleted");
+    let completedTasksCounter = document.getElementById("tasks-completed");
 
     completedTasksCounter.textContent = completedTasksLength;
 }
