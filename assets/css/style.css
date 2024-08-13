@@ -143,9 +143,9 @@ ul li::before {
 li span { 
     position: absolute;
     right: 5px;
-    top: 5px;
+    top: 4px;
     background-image: url("../images/circle-xmark-regular.svg");
-    background-size: 17px 17px;
+    background-size: 19px 19px;
     background-repeat: no-repeat;
     background-position: center;
     padding: 10px 10px;

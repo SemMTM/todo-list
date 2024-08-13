@@ -144,6 +144,6 @@ getTitle();
  * Ding Audio that plays on task complete
  */
 function audioPlay(){
-    const audio = new Audio("./assets/audio/ding-sound-effect.mp3");
+    const audio = new Audio("./assets/audio/ding.mp3");
     audio.play();
 }
