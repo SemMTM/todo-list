@@ -105,13 +105,14 @@ function priorityTask(event) {
     if (task.classList.contains('priority-task') && task.classList.contains('incomplete')) {
         task.classList.toggle('priority-task');
         taskList.appendChild(task);
+        saveTasks()
 
     //Add incomplete tasks to priority list and move to the top     
     } else if (task.classList.contains !=='priority-task' && task.classList.contains('incomplete')){
         task.classList.toggle('priority-task');
         taskList.insertBefore(task, taskList.firstChild);
+        saveTasks()
     }
-    saveTasks()
 }
 
 /**
