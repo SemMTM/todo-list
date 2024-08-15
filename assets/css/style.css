@@ -172,12 +172,12 @@ ul li::before {
     border-radius: 35px;
 }
 
-.prioritytask {
+.priority-task {
     background-color: red;
 }
 
-.prioritytask:hover {
-    background-color: red;
+.priority-task:hover {
+    background-color: rgb(190, 0, 0);
 }
 
 .completed {

@@ -96,8 +96,16 @@ function completeTask(event) {
 
 function priorityTask(event) {
     let lastClicked = event.target;
+    let task = lastClicked.parentNode;
+    let taskList = document.getElementById('incomplete-tasks');
 
-    lastClicked.parentNode.classList.add('priorityTask');
+    if (task.classList.contains('priority-task')) {
+        task.classList.toggle('priority-task');
+        taskList.appendChild(task);
+    } else {
+        task.classList.toggle('priority-task');
+        taskList.insertBefore(task, taskList.firstChild);
+    }
 }
 
 /**
