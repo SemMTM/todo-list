@@ -112,7 +112,7 @@ ul {
 
 ul li {
     list-style: none;
-    padding: 5px 40px; 
+    padding: 10px 40px; 
     position: relative;
     cursor: pointer;
     background-color: #4a4a4a;
@@ -137,15 +137,15 @@ ul li::before {
     background-size: cover;
     background-position: center;
     left: 5px;
-    top: 5px;
+    top: 9px;
 }
 
 .deletebtn { 
     position: absolute;
     right: 5px;
-    top: 4px;
+    top: 9px;
     background-image: url("../images/circle-xmark-regular.svg");
-    background-size: 19px 19px;
+    background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: center;
     padding: 10px 10px;
@@ -159,9 +159,9 @@ ul li::before {
 .prioritybtn { 
     position: absolute;
     right: 30px;
-    top: 4px;
+    top: 9px;
     background-image: url("../images/exclamation-mark-inside-a-circle.svg");
-    background-size: 19px 19px;
+    background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: center;
     padding: 10px 10px;
@@ -195,7 +195,7 @@ ul li::before {
     background-size: cover;
     background-position: center;
     left: 5px;
-    top: 5px;
+    top: 9px;
 }
 
 /* Task Counter Styles */
@@ -210,7 +210,7 @@ ul li::before {
 }
 
 /* Media Query for mobile */
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 550px) {
     #main-title {
         font-size: 23px;
         padding-bottom: 9px;

@@ -111,6 +111,7 @@ function priorityTask(event) {
         task.classList.toggle('priority-task');
         taskList.insertBefore(task, taskList.firstChild);
     }
+    saveTasks()
 }
 
 /**
