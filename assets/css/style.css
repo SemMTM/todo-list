@@ -140,7 +140,7 @@ ul li::before {
     top: 5px;
 }
 
-li span { 
+.deletebtn { 
     position: absolute;
     right: 5px;
     top: 4px;
@@ -151,9 +151,33 @@ li span {
     padding: 10px 10px;
 }
 
-li span:hover {
+.deletebtn:hover {
     background-color: #15151581;
     border-radius: 35px;
+}
+
+.prioritybtn { 
+    position: absolute;
+    right: 30px;
+    top: 4px;
+    background-image: url("../images/exclamation-mark-inside-a-circle.svg");
+    background-size: 19px 19px;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px 10px;
+}
+
+.prioritybtn:hover {
+    background-color: #15151581;
+    border-radius: 35px;
+}
+
+.prioritytask {
+    background-color: red;
+}
+
+.prioritytask:hover {
+    background-color: red;
 }
 
 .completed {

@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function addTask() {
     
     let deleteTask = document.createElement('span');
+    let priorityBtn = document.createElement('span');
     let newTask = document.getElementById('inputBox').value;
     let newListItem = document.createElement("li");
     let list = document.getElementsByTagName('ul');
@@ -39,7 +40,12 @@ function addTask() {
     newListItem.textContent = newTask;
     list[0].appendChild(newListItem);
     newListItem.setAttribute("onclick", "completeTask(event)");
+    newListItem.classList.add('incomplete');
     newListItem.appendChild(deleteTask);
+    deleteTask.classList.add('deletebtn');
+    newListItem.appendChild(priorityBtn);
+    priorityBtn.classList.add('prioritybtn');
+    priorityBtn.setAttribute("onclick", "priorityTask(event)");
     }
 
     document.getElementById("inputBox").value = "";
@@ -55,36 +61,43 @@ function addTask() {
  */
 function completeTask(event) {
 
-    let completedTask = event.target;
+    let lastClicked = event.target;
     let listParent = document.getElementsByTagName('ul');
     
     // If a task is deleted
-    if (completedTask.tagName !== "LI") {
-        completedTask.parentNode.remove();
+    if (lastClicked.classList.contains("deletebtn")) {
+        lastClicked.parentNode.remove();
         saveTasks();
         saveTitle();
         tasksLeft();
         tasksCompleted();
 
     // If a task is marked as completed    
-    } else if (completedTask.classList == '') {
-        completedTask.classList.toggle('completed');
+    } else if (lastClicked.classList.contains('incomplete')) {
+        lastClicked.classList.toggle('completed');
+        lastClicked.classList.toggle('incomplete');
         audioPlay();
-        listParent[1].appendChild(completedTask);
+        listParent[1].appendChild(lastClicked);
         saveTasks();
         saveTitle();
         tasksLeft();
         tasksCompleted();
 
     // If a task is unmarked as completed    
-    } else if (completedTask.classList == 'completed') {
-        completedTask.classList.remove('completed');
-        listParent[0].appendChild(completedTask);
+    } else if (lastClicked.classList.contains('completed')) {
+        lastClicked.classList.remove('completed');
+        listParent[0].appendChild(lastClicked);
         saveTasks();
         saveTitle();
         tasksLeft();
         tasksCompleted();
     }
+}
+
+function priorityTask(event) {
+    let lastClicked = event.target;
+
+    lastClicked.parentNode.classList.add('priorityTask');
 }
 
 /**
