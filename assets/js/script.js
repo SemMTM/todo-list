@@ -101,12 +101,12 @@ function priorityTask(event) {
     let task = lastClicked.parentNode;
     let taskList = document.getElementById('incomplete-tasks');
 
-    //Remove task from priority list and add it back to bottom of incomplete list
+    //Remove incomplete tasks from priority list and add it back to bottom of incomplete list
     if (task.classList.contains('priority-task') && task.classList.contains('incomplete')) {
         task.classList.toggle('priority-task');
         taskList.appendChild(task);
 
-    //Add task to priority list and move to the top     
+    //Add incomplete tasks to priority list and move to the top     
     } else if (task.classList.contains !=='priority-task' && task.classList.contains('incomplete')){
         task.classList.toggle('priority-task');
         taskList.insertBefore(task, taskList.firstChild);
