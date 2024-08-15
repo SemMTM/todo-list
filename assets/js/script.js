@@ -125,18 +125,21 @@ function closeDatePopUp() {
     datePopUp.classList.toggle('hidden');
 }
 
-function taskDueDate(event) {
-    let lastClicked = event.target
-    let task = lastClicked.parentNode
-    let noBtn = document.getElementById('nobtn');
-    let dateSelected = document.getElementById.value;
+function taskDueDate() {
+    let selectedDate = document.getElementById('task-date').value;
     let datePopUp = document.getElementById('set-date-pop-up');
-    let dateText = document.createElement('div');
+    let selectedTask = document.getElementById('incomplete-tasks').firstChild;
+    let createDiv = document.createElement('div');
 
-    task.appendChild(dateText);
-    dateText.innerHTML(dateSelected);
-    datePopUp.classList.toggle('hidden');
-    dateSelected = '';
+    if (selectedDate == '') {
+        alert ('Please select a date');
+    } else {
+        console.log(selectedDate);
+        datePopUp.classList.toggle('hidden');
+        selectedTask.insertAdjacentElement('beforeend', createDiv);
+        createDiv.classList.add('due-date');
+        createDiv.textContent = selectedDate;
+    }
 }
 
 /**
