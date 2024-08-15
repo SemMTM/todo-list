@@ -100,6 +100,7 @@ function priorityTask(event) {
     let lastClicked = event.target;
     let task = lastClicked.parentNode;
     let taskList = document.getElementById('incomplete-tasks');
+    let datePopUp = document.getElementById('set-date-pop-up')
 
     //Remove incomplete tasks from priority list and add it back to bottom of incomplete list
     if (task.classList.contains('priority-task') && task.classList.contains('incomplete')) {
@@ -109,6 +110,8 @@ function priorityTask(event) {
 
     //Add incomplete tasks to priority list and move to the top     
     } else if (task.classList.contains !=='priority-task' && task.classList.contains('incomplete')){
+        datePopUp.classList.toggle('active');
+        datePopUp.classList.toggle('hidden');
         task.classList.toggle('priority-task');
         taskList.insertBefore(task, taskList.firstChild);
         saveTasks()

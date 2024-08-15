@@ -25,6 +25,10 @@ body {
     display: none;
 }
 
+.active {
+    visibility: visible;
+}
+
 /* Title Styles */
 #main-title {
     font-size: 26px;
@@ -45,6 +49,10 @@ h2 {
     font-weight: 300;
     color: #e9e9e9;
     padding-top: 10px;
+}
+
+h5 {
+    padding-bottom: 10px;
 }
 
 /* Outer container styles */
@@ -210,6 +218,35 @@ ul li::before {
     margin: 100px 10px 10px 10px;
     align-self: flex-start;
     color: #e9e9e9;
+}
+
+/* Set Date Pop Up Styles */
+#date-outer {
+    display: flex;
+    justify-content: center;
+}
+
+#set-date-pop-up {
+    background-color: lightblue;
+    position: absolute;
+    box-sizing: border-box;
+    padding: 25px;
+}
+
+.nobtn {
+    height: 30px;
+    width: 40px;
+    border: none;
+    margin-left: 5px;
+}
+
+#date-container-inner {
+    padding: 10px;
+}
+
+#task-date {
+    height: 30px;
+    border: none;
 }
 
 /* Media Query for mobile */
