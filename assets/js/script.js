@@ -102,6 +102,13 @@ function completeTask(event) {
     }
 }
 
+function deleteDate() {
+    
+}
+
+/**
+ * Set and remove tasks as priority
+ */
 function priorityTask(event) {
     let lastClicked = event.target;
     let task = lastClicked.parentNode;
@@ -124,13 +131,18 @@ function priorityTask(event) {
     }
 }
 
-// Close Date Pop Up
+/**
+ * Close date pop up
+ */
 function closeDatePopUp() {
     let datePopUp = document.getElementById('date-outer');
 
     datePopUp.classList.toggle('hidden');
 }
 
+/**
+ * Set tasks due date 
+ */
 function taskDueDate() {
     let selectedDate = document.getElementById('task-date').value;
     let datePopUp = document.getElementById('date-outer');
