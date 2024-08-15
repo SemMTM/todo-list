@@ -76,6 +76,7 @@ function completeTask(event) {
     } else if (lastClicked.classList.contains('incomplete')) {
         lastClicked.classList.toggle('completed');
         lastClicked.classList.toggle('incomplete');
+        lastClicked.classList.remove('priority-task');
         audioPlay();
         listParent[1].appendChild(lastClicked);
         saveTasks();
@@ -85,7 +86,8 @@ function completeTask(event) {
 
     // If a task is unmarked as completed    
     } else if (lastClicked.classList.contains('completed')) {
-        lastClicked.classList.remove('completed');
+        lastClicked.classList.toggle('completed');
+        lastClicked.classList.toggle('incomplete');
         listParent[0].appendChild(lastClicked);
         saveTasks();
         saveTitle();
@@ -99,10 +101,13 @@ function priorityTask(event) {
     let task = lastClicked.parentNode;
     let taskList = document.getElementById('incomplete-tasks');
 
-    if (task.classList.contains('priority-task')) {
+    //Remove task from priority list and add it back to bottom of incomplete list
+    if (task.classList.contains('priority-task') && task.classList.contains('incomplete')) {
         task.classList.toggle('priority-task');
         taskList.appendChild(task);
-    } else {
+
+    //Add task to priority list and move to the top     
+    } else if (task.classList.contains !=='priority-task' && task.classList.contains('incomplete')){
         task.classList.toggle('priority-task');
         taskList.insertBefore(task, taskList.firstChild);
     }
