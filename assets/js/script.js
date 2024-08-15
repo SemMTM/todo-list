@@ -106,7 +106,7 @@ function priorityTask(event) {
     let lastClicked = event.target;
     let task = lastClicked.parentNode;
     let taskList = document.getElementById('incomplete-tasks');
-    let datePopUp = document.getElementById('set-date-pop-up')
+    let datePopUp = document.getElementById('date-outer')
 
     //Remove incomplete tasks from priority list and add it back to bottom of incomplete list
     if (task.classList.contains('priority-task') && task.classList.contains('incomplete')) {
@@ -126,14 +126,14 @@ function priorityTask(event) {
 
 // Close Date Pop Up
 function closeDatePopUp() {
-    let datePopUp = document.getElementById('set-date-pop-up');
+    let datePopUp = document.getElementById('date-outer');
 
     datePopUp.classList.toggle('hidden');
 }
 
 function taskDueDate() {
     let selectedDate = document.getElementById('task-date').value;
-    let datePopUp = document.getElementById('set-date-pop-up');
+    let datePopUp = document.getElementById('date-outer');
     let selectedTask = document.getElementById('incomplete-tasks').firstChild;
 
     if (selectedDate == '') {
