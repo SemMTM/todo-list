@@ -33,6 +33,7 @@ function addTask() {
     let newTask = document.getElementById('inputBox').value;
     let newListItem = document.createElement("li");
     let list = document.getElementsByTagName('ul');
+    let createDiv = document.createElement('div');
 
     if (newTask == '') {
         alert('Please enter a new task!');
@@ -42,10 +43,15 @@ function addTask() {
     newListItem.setAttribute("onclick", "completeTask(event)");
     newListItem.classList.add('incomplete');
     newListItem.appendChild(deleteTask);
+    //Add Delete Button
     deleteTask.classList.add('deletebtn');
     newListItem.appendChild(priorityBtn);
+    // Adds Priority Button
     priorityBtn.classList.add('prioritybtn');
     priorityBtn.setAttribute("onclick", "priorityTask(event)");
+    // Adds due date div
+    newListItem.insertAdjacentElement('beforeend', createDiv);
+    createDiv.classList.add('due-date');
     }
 
     document.getElementById("inputBox").value = "";
@@ -129,16 +135,12 @@ function taskDueDate() {
     let selectedDate = document.getElementById('task-date').value;
     let datePopUp = document.getElementById('set-date-pop-up');
     let selectedTask = document.getElementById('incomplete-tasks').firstChild;
-    let createDiv = document.createElement('div');
 
     if (selectedDate == '') {
         alert ('Please select a date');
     } else {
-        console.log(selectedDate);
         datePopUp.classList.toggle('hidden');
-        selectedTask.insertAdjacentElement('beforeend', createDiv);
-        createDiv.classList.add('due-date');
-        createDiv.textContent = selectedDate;
+        selectedTask.lastChild.textContent = selectedDate;
     }
 }
 
