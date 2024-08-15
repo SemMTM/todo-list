@@ -118,6 +118,27 @@ function priorityTask(event) {
     }
 }
 
+// Close Date Pop Up
+function closeDatePopUp() {
+    let datePopUp = document.getElementById('set-date-pop-up');
+
+    datePopUp.classList.toggle('hidden');
+}
+
+function taskDueDate(event) {
+    let lastClicked = event.target
+    let task = lastClicked.parentNode
+    let noBtn = document.getElementById('nobtn');
+    let dateSelected = document.getElementById.value;
+    let datePopUp = document.getElementById('set-date-pop-up');
+    let dateText = document.createElement('div');
+
+    task.appendChild(dateText);
+    dateText.innerHTML(dateSelected);
+    datePopUp.classList.toggle('hidden');
+    dateSelected = '';
+}
+
 /**
  * Calcualtes the number of tasks left and updates the counter
  */

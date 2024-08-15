@@ -40,6 +40,7 @@
             <div>
                 <ul id="completed-tasks-list">
                     <!-- Will be populated with completed tasks -->
+                    <li>Task 1<div class="due-date">15-Mar-25</div></li>
                 </ul>
             </div>
         </div>
@@ -57,7 +58,8 @@
             <div id="date-container-inner">
                 <h5>Do you want to set a due date?</h5>
                 <input type="date" id="task-date">
-                <button class="nobtn">No</button>
+                <button class="nobtn btn" onclick="closeDatePopUp()">No</button>
+                <button class="yesbtn btn" onclick="taskDueDate()">Set Date</button>
             </div>
         </div>
     </div>

@@ -230,14 +230,19 @@ ul li::before {
     background-color: lightblue;
     position: absolute;
     box-sizing: border-box;
-    padding: 25px;
+    padding: 10px;
+    width: 250px;
 }
 
-.nobtn {
-    height: 30px;
-    width: 40px;
+.btn {
+    height: 35px;
+    width: 70px;
     border: none;
-    margin-left: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: grey;
 }
 
 #date-container-inner {
@@ -247,6 +252,13 @@ ul li::before {
 #task-date {
     height: 30px;
     border: none;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.due-date {
+    padding-top: 4px;
+    font-size: 13px;
 }
 
 /* Media Query for mobile */
