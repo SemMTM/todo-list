@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     tasksCompleted();
     priorityTasksRemaining()
     saveTitle();
+    dueDateChecker()
 
     input.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
@@ -28,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function() {
  * Clears add a task for field.
  */
 function addTask() {
-
     let deleteTask = document.createElement('span');
     let priorityBtn = document.createElement('span');
     let newTask = document.getElementById('inputBox').value;
@@ -44,12 +44,15 @@ function addTask() {
         newListItem.setAttribute("onclick", "completeTask(event)");
         newListItem.classList.add('incomplete');
         newListItem.appendChild(deleteTask);
+
         //Add Delete Button
         deleteTask.classList.add('deletebtn');
         newListItem.appendChild(priorityBtn);
+
         // Adds Priority Button
         priorityBtn.classList.add('prioritybtn');
         priorityBtn.setAttribute("onclick", "priorityTask(event)");
+
         // Adds due date div
         newListItem.insertAdjacentElement('beforeend', createDiv);
         createDiv.classList.add('due-date-container')
@@ -71,7 +74,6 @@ function addTask() {
  * Deletes tasks when x is clicked.
  */
 function completeTask(event) {
-
     let lastClicked = event.target;
     let listParent = document.getElementsByTagName('ul');
     
@@ -124,6 +126,7 @@ function priorityTask(event) {
     }
     priorityTasksRemaining();
     saveTasks();
+    dueDateChecker()
 }
 
 /**
@@ -159,6 +162,7 @@ function taskDueDate() {
     }
     priorityTasksRemaining();
     saveTasks()
+    dueDateChecker()
 }
 
 /**
@@ -169,8 +173,8 @@ function dueDateChecker() {
     let remainingTasksLength = incompleteTasks.length;
     let dueDate = document.getElementsByClassName('due-date').value;
     let currentDate = new Date();
-    let dateInFormat = new Date(dueDate);
 
+    //Loop to iterate through incomplete tasks
     for (let i = 0; i < remainingTasksLength; i++) {
         let userSetDate = incompleteTasks[i].lastChild.firstChild.textContent;
         let userDateInFormat = new Date(userSetDate);
@@ -187,7 +191,14 @@ function dueDateChecker() {
 
         // If user date is more then todays date    
         } else {
-            incompleteTasks[i].lastChild.lastChild.textContent = ` - Due in ${diffDays} Days`;
+            if (diffDays > 5) {
+                incompleteTasks[i].lastChild.lastChild.innerHTML = ` - Due in ${diffDays} Days`;
+            } else if (diffDays <= 1) {
+                incompleteTasks[i].lastChild.lastChild.innerHTML = " - <span style='color:red'> Due soon!</span>";
+                currentTasks.insertBefore(incompleteTasks[i], currentTasks.firstChild);
+            } else {
+                incompleteTasks[i].lastChild.lastChild.innerHTML = ` - <span style='color:orange'> Due in ${diffDays} Days</span>`;
+            }
         }
     }
 }
