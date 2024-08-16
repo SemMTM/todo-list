@@ -262,9 +262,18 @@ ul li::before {
     margin-bottom: 10px;
 }
 
-.due-date {
+.due-date-container {
     padding-top: 4px;
+}
+
+.due-date {
     font-size: 13px;
+    display: inline;
+}
+
+.task-due-in {
+    font-size: 13px;
+    display: inline;
 }
 
 /* Media Query for mobile */

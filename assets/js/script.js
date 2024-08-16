@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     tasksCompleted();
     priorityTasksRemaining()
     saveTitle();
+    dueDateChecker();
 
     input.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
@@ -52,7 +53,9 @@ function addTask() {
         priorityBtn.setAttribute("onclick", "priorityTask(event)");
         // Adds due date div
         newListItem.insertAdjacentElement('beforeend', createDiv);
-        createDiv.classList.add('due-date');
+        createDiv.classList.add('due-date-container')
+        createDiv.innerHTML = `<div class="due-date"></div>
+        <div class="task-due-in"></div>`;
     }
 
     document.getElementById("inputBox").value = "";
@@ -150,15 +153,25 @@ function taskDueDate() {
         alert ('Please select a date');
     } else {
         datePopUp.classList.toggle('hidden');
-        if (currentDate < dateInFormat) {
-            selectedTask.lastChild.textContent = `${trimmedUserDate} - Due in ${diffDays} days`;
-        } else {
-            selectedTask.lastChild.textContent = `${trimmedUserDate} - Overdue`;
-        }
+        selectedTask.lastChild.firstChild.textContent = `${trimmedUserDate}`;
     }
     priorityTasksRemaining();
     saveTasks()
 }
+
+/**
+ * Checks how many days are left until due date and live updates reminder
+ */
+function dueDateChecker() {
+    const incompleteTasks = document.getElementById('incomplete-tasks');
+    let remainingTasksLength = incompleteTasks.length;
+    let dueDateDiv = document.getElementsByClassName('due-date');
+
+    for (let i = 0; i < remainingTasksLength; i++) {
+        console.log(incompleteTasks[i]);
+    }
+}
+dueDateChecker();
 
 /**
  * Calcualtes the number of tasks left and updates the counter
