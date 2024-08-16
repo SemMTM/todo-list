@@ -141,14 +141,14 @@ function taskDueDate() {
     let selectedTask = document.getElementById('incomplete-tasks').firstChild;
     const oneDay = 24 * 60 * 60 * 1000; // hours*mins*secs*millisecs
     let currentDate = new Date();
-    const diffDays = Math.round(Math.abs((currentDate - selectedDate) / oneDay));
+    let dateInFormat = new Date(selectedDate);
+    const diffDays = Math.round(Math.abs((currentDate - dateInFormat) / oneDay));
 
     if (selectedDate == '') {
         alert ('Please select a date');
     } else {
         datePopUp.classList.toggle('hidden');
-        selectedTask.lastChild.textContent = `${selectedDate} - Due in 5 days`;
-        console.log(diffDays);
+        selectedTask.lastChild.textContent = `${selectedDate} - Due in ${diffDays} days`;
     }
     priorityTasksRemaining();
 }
