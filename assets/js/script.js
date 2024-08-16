@@ -174,13 +174,20 @@ function dueDateChecker() {
     for (let i = 0; i < remainingTasksLength; i++) {
         let userSetDate = incompleteTasks[i].lastChild.firstChild.textContent;
         let userDateInFormat = new Date(userSetDate);
+        const oneDay = 24 * 60 * 60 * 1000; // hours*mins*secs*millisecs
+        const diffDays = Math.round(Math.abs((currentDate - userDateInFormat) / oneDay));
 
+        //If User date is less then current date
         if (userDateInFormat < currentDate) {
-            console.log(incompleteTasks[i], 'youre late');
+            incompleteTasks[i].lastChild.lastChild.textContent = ' - Overdue!';
+
+        //If there is no set date    
         } else if (incompleteTasks[i].lastChild.firstChild.textContent == '') {
-            console.log(incompleteTasks[i], 'nothing here');
+            //No action
+
+        // If user date is more then todays date    
         } else {
-            console.log(incompleteTasks[i], userDateInFormat);
+            incompleteTasks[i].lastChild.lastChild.textContent = ` - Due in ${diffDays} Days`;
         }
     }
 }
