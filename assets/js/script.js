@@ -143,14 +143,18 @@ function taskDueDate() {
     let currentDate = new Date();
     let dateInFormat = new Date(selectedDate);
     const diffDays = Math.round(Math.abs((currentDate - dateInFormat) / oneDay));
+    let userDateString = dateInFormat.toString();
+    let trimmedUserDate = userDateString.substring(0, 10);
 
     if (selectedDate == '') {
         alert ('Please select a date');
     } else {
         datePopUp.classList.toggle('hidden');
-        selectedTask.lastChild.textContent = `${selectedDate} - Due in ${diffDays} days`;
+        selectedTask.lastChild.textContent = `${trimmedUserDate} - Due in ${diffDays} days`;
+        console.log(trimmedUserDate);
     }
     priorityTasksRemaining();
+    saveTasks()
 }
 
 /**

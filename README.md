@@ -120,6 +120,7 @@ Live link: https://semmtm.github.io/todo-list/
 - How to use the event property: https://www.w3schools.com/jsref/event_target.asp
 - Code for adding a task on enter click is from the 'Love Maths' project
 - How to get sound to play on click event: https://www.youtube.com/watch?v=0R6rZngcHGg
+- How to calculate the difference between two dates in days: https://stackoverflow.com/questions/2627473/how-to-calculate-the-number-of-days-between-two-dates
 
 ### Media
 - Font awesome icon used: https://fontawesome.com/icons/list?f=classic&s=solid
