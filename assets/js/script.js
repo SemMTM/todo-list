@@ -154,7 +154,8 @@ function taskDueDate() {
         alert ('Please select a date');
     } else {
         datePopUp.classList.toggle('hidden');
-        selectedTask.lastChild.firstChild.textContent = `${trimmedUserDate}`;
+        selectedTask.lastChild.firstChild.textContent = selectedDate;
+        //selectedTask.lastChild.firstChild.textContent = `${trimmedUserDate}`;
     }
     priorityTasksRemaining();
     saveTasks()
@@ -166,14 +167,20 @@ function taskDueDate() {
 function dueDateChecker() {
     const incompleteTasks = currentTasks.getElementsByTagName("li");
     let remainingTasksLength = incompleteTasks.length;
-    let dueDateDiv = document.getElementsByClassName('due-date');
+    let dueDate = document.getElementsByClassName('due-date').value;
     let currentDate = new Date();
+    let dateInFormat = new Date(dueDate);
 
     for (let i = 0; i < remainingTasksLength; i++) {
-        if (dueDateDiv.value == false) {
-            console.log('nothing here');
+        let userSetDate = incompleteTasks[i].lastChild.firstChild.textContent;
+        let userDateInFormat = new Date(userSetDate);
+
+        if (userDateInFormat < currentDate) {
+            console.log(incompleteTasks[i], 'youre late');
+        } else if (incompleteTasks[i].lastChild.firstChild.textContent == '') {
+            console.log(incompleteTasks[i], 'nothing here');
         } else {
-            console.log(incompleteTasks[i].lastChild.firstChild.textContent);
+            console.log(incompleteTasks[i], userDateInFormat);
         }
     }
 }
