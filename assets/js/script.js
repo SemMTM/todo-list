@@ -150,8 +150,11 @@ function taskDueDate() {
         alert ('Please select a date');
     } else {
         datePopUp.classList.toggle('hidden');
-        selectedTask.lastChild.textContent = `${trimmedUserDate} - Due in ${diffDays} days`;
-        console.log(trimmedUserDate);
+        if (currentDate < dateInFormat) {
+            selectedTask.lastChild.textContent = `${trimmedUserDate} - Due in ${diffDays} days`;
+        } else {
+            selectedTask.lastChild.textContent = `${trimmedUserDate} - Overdue`;
+        }
     }
     priorityTasksRemaining();
     saveTasks()
