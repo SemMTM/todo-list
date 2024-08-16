@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     tasksLeft();
     tasksCompleted();
+    priorityTasksRemaining()
     saveTitle();
 
     input.addEventListener('keydown', function(event) {
@@ -27,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
  * Clears add a task for field.
  */
 function addTask() {
-    
+
     let deleteTask = document.createElement('span');
     let priorityBtn = document.createElement('span');
     let newTask = document.getElementById('inputBox').value;
@@ -38,20 +39,20 @@ function addTask() {
     if (newTask == '') {
         alert('Please enter a new task!');
     } else {
-    newListItem.textContent = newTask;
-    list[0].appendChild(newListItem);
-    newListItem.setAttribute("onclick", "completeTask(event)");
-    newListItem.classList.add('incomplete');
-    newListItem.appendChild(deleteTask);
-    //Add Delete Button
-    deleteTask.classList.add('deletebtn');
-    newListItem.appendChild(priorityBtn);
-    // Adds Priority Button
-    priorityBtn.classList.add('prioritybtn');
-    priorityBtn.setAttribute("onclick", "priorityTask(event)");
-    // Adds due date div
-    newListItem.insertAdjacentElement('beforeend', createDiv);
-    createDiv.classList.add('due-date');
+        newListItem.textContent = newTask;
+        list[0].appendChild(newListItem);
+        newListItem.setAttribute("onclick", "completeTask(event)");
+        newListItem.classList.add('incomplete');
+        newListItem.appendChild(deleteTask);
+        //Add Delete Button
+        deleteTask.classList.add('deletebtn');
+        newListItem.appendChild(priorityBtn);
+        // Adds Priority Button
+        priorityBtn.classList.add('prioritybtn');
+        priorityBtn.setAttribute("onclick", "priorityTask(event)");
+        // Adds due date div
+        newListItem.insertAdjacentElement('beforeend', createDiv);
+        createDiv.classList.add('due-date');
     }
 
     document.getElementById("inputBox").value = "";
@@ -59,6 +60,7 @@ function addTask() {
     tasksLeft();
     saveTitle();
     tasksCompleted();
+    priorityTasksRemaining();
 }
 
 /**
@@ -73,10 +75,6 @@ function completeTask(event) {
     // If a task is deleted
     if (lastClicked.classList.contains("deletebtn")) {
         lastClicked.parentNode.remove();
-        saveTasks();
-        saveTitle();
-        tasksLeft();
-        tasksCompleted();
 
     // If a task is marked as completed    
     } else if (lastClicked.classList.contains('incomplete')) {
@@ -85,25 +83,18 @@ function completeTask(event) {
         lastClicked.classList.remove('priority-task');
         audioPlay();
         listParent[1].appendChild(lastClicked);
-        saveTasks();
-        saveTitle();
-        tasksLeft();
-        tasksCompleted();
 
     // If a task is unmarked as completed    
     } else if (lastClicked.classList.contains('completed')) {
         lastClicked.classList.toggle('completed');
         lastClicked.classList.toggle('incomplete');
         listParent[0].appendChild(lastClicked);
-        saveTasks();
-        saveTitle();
-        tasksLeft();
-        tasksCompleted();
     }
-}
-
-function deleteDate() {
-    
+    saveTasks();
+    saveTitle();
+    tasksLeft();
+    tasksCompleted();
+    priorityTasksRemaining();
 }
 
 /**
@@ -119,7 +110,6 @@ function priorityTask(event) {
     if (task.classList.contains('priority-task') && task.classList.contains('incomplete')) {
         task.classList.toggle('priority-task');
         taskList.appendChild(task);
-        saveTasks()
 
     //Add incomplete tasks to priority list and move to the top     
     } else if (task.classList.contains !=='priority-task' && task.classList.contains('incomplete')){
@@ -127,8 +117,9 @@ function priorityTask(event) {
         datePopUp.classList.toggle('hidden');
         task.classList.toggle('priority-task');
         taskList.insertBefore(task, taskList.firstChild);
-        saveTasks()
     }
+    priorityTasksRemaining();
+    saveTasks();
 }
 
 /**
@@ -138,6 +129,7 @@ function closeDatePopUp() {
     let datePopUp = document.getElementById('date-outer');
 
     datePopUp.classList.toggle('hidden');
+    priorityTasksRemaining();
 }
 
 /**
@@ -147,13 +139,18 @@ function taskDueDate() {
     let selectedDate = document.getElementById('task-date').value;
     let datePopUp = document.getElementById('date-outer');
     let selectedTask = document.getElementById('incomplete-tasks').firstChild;
+    const oneDay = 24 * 60 * 60 * 1000; // hours*mins*secs*millisecs
+    let currentDate = new Date();
+    const diffDays = Math.round(Math.abs((currentDate - selectedDate) / oneDay));
 
     if (selectedDate == '') {
         alert ('Please select a date');
     } else {
         datePopUp.classList.toggle('hidden');
-        selectedTask.lastChild.textContent = selectedDate;
+        selectedTask.lastChild.textContent = `${selectedDate} - Due in 5 days`;
+        console.log(diffDays);
     }
+    priorityTasksRemaining();
 }
 
 /**
@@ -176,6 +173,16 @@ function tasksCompleted() {
     let completedTasksCounter = document.getElementById("tasks-completed");
 
     completedTasksCounter.textContent = completedTasksLength;
+}
+
+/**s
+ * Calculates the number of priority tasks
+ */
+function priorityTasksRemaining() {
+    let priorityTasks = document.getElementsByClassName('priority-task').length;
+    let priorityTaskCounter = document.getElementById('priority-tasks-left');
+
+    priorityTaskCounter.textContent = priorityTasks;
 }
 
 /**

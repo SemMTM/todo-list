@@ -214,6 +214,7 @@ ul li::before {
     padding: 5px;
     background-color: #3b3b3b;
     border-radius: 5px;
+    width: 300px;
     order: 1;
     margin: 100px 10px 10px 10px;
     align-self: flex-start;
@@ -223,7 +224,6 @@ ul li::before {
 /* Set Date Pop Up Styles */
 #date-outer {
     width: 100%;
-    height: 100%;
     position: absolute;
     top: 35%;
 }
