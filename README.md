@@ -1,15 +1,49 @@
-# To-Do List
-To-Do List is a JavaScript web app that is a simple yet effective way to track tasks that need to be done and can be easily used by anyone for any tasks. It is simple by design for 2 reasons: 
+# Simple To-Do List
+![Responsive Design Screenshot](assets/images/readme-images/Screenshot_12.png)
+
+## A To-Do List Web Appication
+Simple To-Do List is a JavaScript web app that is a simple yet effective way to track tasks that need to be done and can be easily used by anyone for any tasks. It is simple by design for 2 reasons: 
  - A To-Do list is something that does not need to be overly complicated. The focus should be on the tasks that need completeing.
  - It can be easily used by anyone, regardless of technical ability.
  
-The purpose of this app is to allow a user to easily keep track of tasks that they need to complete, see the tasks they have completed and get a sense of accomplishment from the "ding" after each task completion. They can also see a score which shows the tasks remaining and the completed tasks.
+The purpose of this app is to allow a user to easily keep track of tasks that they need to complete, see the tasks they have completed and get a sense of accomplishment from the "ding" after each task completion. They can see scores which indicate the tasks remaining, the completed tasks and the number of priority tasks.
 
-Live link: https://semmtm.github.io/todo-list/
+#### Live site: https://semmtm.github.io/todo-list/
+#### Repository: https://github.com/SemMTM/todo-list
 
+- By Osama Hendawi
 
-![Responsive Design Screenshot](assets/images/readme-images/Screenshot_12.png)
+## Table of Contents
+1.
+2.
+3.
 
+## UX
+### Pre-project Planning
+For project 2 I decided I wanted to challenge myself and create something that was'nt in one of the suggested projects. I came to the idea of a to-do list as this is something I use regularly and it would really test my abilities with JavaScript as I have not done anything like this previously.
+
+There were a few main things I wanted this to-do list to have:
+
+- A due date and priority tasks feature
+- Counters to show remaining tasks
+- Save task data locally so the user does no have to re-enter their tasks each time 
+
+### UX Design
+In terms of user experince, I really wanted to keep things as clean as possible. I wanted the task list to be efficient, easy to use, clean and organised for the user. I wanted the colours to be more neutral and not distracting, I wanted a font that would be easily legible and poisitve feedback for task completion. Some other considerations were:  
+
+- There had to be a clear distinction between completed and incomplete tasks
+- Priority tasks had to be obvious 
+- Simplicity was to be the main priority in terms of design
+
+## User Stories 
+### User
+- As a user I want to be able to keep an organised list of tasks that need doing
+- As a user I want to be able to set due dates for important tasks that need doing first. I also want a clear indication of when these tasks are due and how long I have left to complete them
+- As a user I want to be able to mark tasks as priority
+- I want to be able to delete tasks and mark them as complete
+
+## Wireframes
+###Desktop & Mobile Wireframes
 
 ## Features
 ### Adding Tasks to the Task List
