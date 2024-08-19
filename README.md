@@ -14,9 +14,14 @@ The purpose of this app is to allow a user to easily keep track of tasks that th
 ### By Osama Hendawi
 
 ## Table of Contents
-1.
-2.
-3.
+1. UX
+2. Features
+3. Future Features
+4. Technology Used 
+5. Testing
+6. Bugs
+7. Credits
+8. Deployment
 
 ## UX
 ### Pre-project Planning
@@ -235,6 +240,9 @@ Fonts and colors used are easily to read and accessibility has been tested on go
 
 ### Media
 - Font awesome icon used: https://fontawesome.com/icons/list?f=classic&s=solid
+
+### Acknowledgements
+> My mentor Alan Bushell, who provided amazing constructive feedback and clear areas for improvement to improve the entire project.
 
 ## Deployment
 - The app was deployed to Github pages. The steps to deploy are as follows:
