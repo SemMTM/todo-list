@@ -39,24 +39,26 @@ function addTask() {
     if (newTask == '') {
         alert('Please enter a new task!');
     } else {
+        //Appends new task to 'incomplete' tasl list
         newListItem.textContent = newTask;
         list[0].appendChild(newListItem);
         newListItem.setAttribute("onclick", "completeTask(event)");
         newListItem.classList.add('incomplete');
-        newListItem.appendChild(deleteTask);
-
+        
         //Add Delete Button
+        newListItem.appendChild(deleteTask);
         deleteTask.classList.add('deletebtn');
-        newListItem.appendChild(priorityBtn);
-
+        
         // Adds Priority Button
+        newListItem.appendChild(priorityBtn);
         priorityBtn.classList.add('prioritybtn');
         priorityBtn.setAttribute("onclick", "priorityTask(event)");
 
-        // Adds due date div
+        // Adds empty due date divs
         newListItem.insertAdjacentElement('beforeend', createDiv);
         createDiv.classList.add('due-date-container')
-        createDiv.innerHTML = `<div class="due-date"></div>
+        createDiv.innerHTML = `<div class="due-date, hidden"></div>
+        <div class="informat-due-date"></div>
         <div class="task-due-in"></div>`;
     }
 
@@ -156,9 +158,10 @@ function taskDueDate() {
     if (selectedDate == '') {
         alert ('Please select a date');
     } else {
+        // Creates due date on task
         datePopUp.classList.toggle('hidden');
         selectedTask.lastChild.firstChild.textContent = selectedDate;
-        //selectedTask.lastChild.firstChild.textContent = `${trimmedUserDate}`;
+        selectedTask.lastChild.children[1].innerHTML = `${trimmedUserDate}`;
     }
     priorityTasksRemaining();
     saveTasks()
@@ -183,7 +186,7 @@ function dueDateChecker() {
 
         //If User date is less then current date
         if (userDateInFormat < currentDate) {
-            incompleteTasks[i].lastChild.lastChild.textContent = ' - Overdue!';
+            incompleteTasks[i].lastChild.lastChild.innerHTML = " - <span style='color:red'> Overdue</span>";
 
         //If there is no set date    
         } else if (incompleteTasks[i].lastChild.firstChild.textContent == '') {
@@ -194,7 +197,7 @@ function dueDateChecker() {
             if (diffDays > 5) {
                 incompleteTasks[i].lastChild.lastChild.innerHTML = ` - Due in ${diffDays} Days`;
             } else if (diffDays <= 1) {
-                incompleteTasks[i].lastChild.lastChild.innerHTML = " - <span style='color:red'> Due soon!</span>";
+                incompleteTasks[i].lastChild.lastChild.innerHTML = " - <span style='color:red'> Due soon</span>";
                 currentTasks.insertBefore(incompleteTasks[i], currentTasks.firstChild);
             } else {
                 incompleteTasks[i].lastChild.lastChild.innerHTML = ` - <span style='color:orange'> Due in ${diffDays} Days</span>`;
