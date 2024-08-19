@@ -126,46 +126,90 @@ In terms of user experince, I really wanted to keep things as clean as possible.
 
 ## Technology Used
 ### HTML
-Used to structure my webpage.
+> Used to structure my webpage.
 
 ### CSS
-Used to style and layout the To-do List.
+> Used to style and layout the To-do List.
 
 ### JavaScript
-Used to add all of the interactivity to the site, update the DOM based on what the user wants to do with their task, update the live counter, add the due dates, set priority tasks etc.
+> Used to add all of the interactivity to the site, update the DOM based on what action the user takes on their tasks, update the live counter, add the due dates, set priority tasks etc.
 
 ### Font Awesome
-Used for the title icon.
+> Used for the title icon.
 
 ## Testing 
 ### General Testing
-- I have tested the site on multiple browsers: Chrome, Safari(mobile) and Opera 
-- I have confirmed that the project is responsive on different screen sizes
-- All text is easy to read on all pages and screen sizes
-- All forms have client side validation and need information in before they can be submnitted
-- All forms submit correctly
-- Tasks are added to the list on enter or button click
-- Tasks counter updates when tasks state changes
-- Task delete works correctly
-- Tasks are put into the correct list depending on if they are complete or not
-- Local data save and retrieval work as intended
-- Task auto ordering works correctly 
-- Task complete notificaction plays when intended
-- Title can be edited and is saved after any action
+| Test | Result |
+|--|--|
+| Website is responsive on different viewport sizes | Pass |
+| Loads correctly on multiple browsers | Pass |
+| All text is legible on different screen sizes and pages | Pass |
+| All forms have client side validation and need information before they can be submitted | Pass |
+| Tasks are added to the list on button click or enter press | Pass |
+| Tasks counter updates when tasks sate changes | Pass |
+| Task delete works correctly  | Pass |
+| Task are put into the correct list depending on if they have been marked as complete or not | Pass |
+| Local data save and retrieval work as intended  | Pass |
+| Task auto ordering works correctly | Pass |
+| Task complete notification plays when a task is marked as complete | Pass |
+| Title can be edited and is saved | Pass |
+| :onhover for all relevant elements works correctly | Pass |
+| Set due date pop-up appears when priority button is pressed | Pass |
+| Set due date pop-up is styled and cantered correctly | Pass |
+| Date select input works correctly and alert is shown if not date is selected | Pass |
+| Priority tasks are outlined and moved to the top of the tasks list  | Pass |
+| When a date is set, the due date is shown under the task and 'Due in...' counter loads correctly | Pass |
+| When 'No' is pressed on the due date pop-up, the task is set as priority and no due date is set | Pass |
+| 'Due in..' reminder updates live and changes colour when conditions are met | Pass |
+| Completed tasks cannot be set as priority or with a due date  | Pass |
+| Priority is removed once a task is marked as complete | Pass |
+| Completed tasks are not saved. This is for list organisation and clean-up | Pass |
+| Due dates appear correctly on mobile | Pass |
+| Set date pop-up appear correctly on mobile | Pass |
+| Add a task input clears after new task is added | Pass |
 
-### Validator Testing
-- HTML - No errors when passing code through the W3C validator 
-- CSS - No errors when passing the stylesheet through the validator
-- JacaScript 
-  - No errors when passing script.js through the Jshint validator
-    - The following metrics were returned:
-    - There are 11 functions in this file.
-    - Function with the largest signature take 1 arguments, while the median is 0.
-    - Largest function has 21 statements in it, while the median is 3.
-    - The most complex function has a cyclomatic complexity value of 4 while the median is 1.
-- Accessibility - Fonts and colors used are easily to read and accessibility has been tested on google speed test
+### Peer Code Review
+> Project submitted for peer code review to Alan, my Code Institute Mentor, and to a more experinced engineer friend of mine.
+> Only noticable issue reported was not needing a ./ for the JavaScript file location in the index.html file.
 
-![Page speed test](assets/images/readme-images/Screenshot_11.png)
+### User Tests
+> 4 users were asked to attempt the following and their scores were averaged to give the following results:
+
+| Test | Result |
+|--|--|
+| Add, delete and mark tasks as complete | 100% |
+| Set tasks with due dates | 100% |
+| Add tasks to the list and reload the page to see if the tasks save correctly | 100% |
+
+## Validator Testing
+### HTML 
+No errors when passing code through the W3C validator.
+
+![HTML Validator testing](assets/images/readme-images/Screenshot_25.png)
+
+### CSS 
+No errors when passing the stylesheet through the validator.
+
+![CSS Validator testing](assets/images/readme-images/Screenshot_26.png)
+
+
+### JavaScript 
+No errors when passing script.js through the Jshint validator
+- There are 16 functions in this file.
+- Function with the largest signature take 1 arguments, while the median is 0.
+- Largest function has 27 statements in it, while the median is 3.5.
+- The most complex function has a cyclomatic complexity value of 6 while the median is 1.
+- No nignificant warnings.
+
+### Accessibility 
+Fonts and colors used are easily to read and accessibility has been tested on google speed test
+
+## Google Lighhouse Testing
+### Desktop
+![Page speed test](assets/images/readme-images/Screenshot_24.png)
+
+### Mobile
+![Page speed test mobile](assets/images/readme-images/Screenshot_23.png)
 
 
 ## Bugs
@@ -178,7 +222,7 @@ Used for the title icon.
 
 ## Credits
 
-### Code Help
+### Content & Resources
 - How to clear a text field using JS: https://stackoverflow.com/questions/14837466/clearing-a-text-field-on-button-click
 - Used for help on how to add an HTML element is a class list: https://www.shecodes.io/athena/3913-how-to-add-a-class-to-an-html-element-in-javascript#:~:text=In%20JavaScript%2C%20you%20can%20add,class%20to%20the%20classList%20property.&text=This%20code%20retrieves%20the%20element,myClass"%20to%20the%20classList%20property.
 - How to set a HTML attribute via JavaScript: https://www.w3schools.com/jsref/met_element_setattribute.asp
@@ -194,9 +238,9 @@ Used for the title icon.
 
 ## Deployment
 - The app was deployed to Github pages. The steps to deploy are as follows:
- - In the GitHub respository, navigate to the setting tab
- - From the source section drop-down menu, select the 'Master' or 'Main' branch
- - Once the 'Main' branch has been selected, the page will provide a link to the completed site once it finishes deployment
+ 1. In the GitHub respository, navigate to the setting tab
+ 2. From the source section drop-down menu, select the 'Master' or 'Main' branch
+ 3. Once the 'Main' branch has been selected, the page will provide a link to the completed site once it finishes deployment
 
  Live Link: https://semmtm.github.io/todo-list/
 

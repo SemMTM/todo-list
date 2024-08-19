@@ -12,9 +12,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     tasksLeft();
     tasksCompleted();
-    priorityTasksRemaining()
+    priorityTasksRemaining();
     saveTitle();
-    dueDateChecker()
+    dueDateChecker();
 
     input.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
@@ -56,7 +56,7 @@ function addTask() {
 
         // Adds empty due date divs
         newListItem.insertAdjacentElement('beforeend', createDiv);
-        createDiv.classList.add('due-date-container')
+        createDiv.classList.add('due-date-container');
         createDiv.innerHTML = `<div class="due-date, hidden"></div>
         <div class="informat-due-date"></div>
         <div class="task-due-in"></div>`;
@@ -112,7 +112,7 @@ function priorityTask(event) {
     let lastClicked = event.target;
     let task = lastClicked.parentNode;
     let taskList = document.getElementById('incomplete-tasks');
-    let datePopUp = document.getElementById('date-outer')
+    let datePopUp = document.getElementById('date-outer');
 
     //Remove incomplete tasks from priority list and add it back to bottom of incomplete list
     if (task.classList.contains('priority-task') && task.classList.contains('incomplete')) {
@@ -128,7 +128,7 @@ function priorityTask(event) {
     }
     priorityTasksRemaining();
     saveTasks();
-    dueDateChecker()
+    dueDateChecker();
 }
 
 /**
@@ -164,8 +164,8 @@ function taskDueDate() {
         selectedTask.lastChild.children[1].innerHTML = `${trimmedUserDate}`;
     }
     priorityTasksRemaining();
-    saveTasks()
-    dueDateChecker()
+    saveTasks();
+    dueDateChecker();
 }
 
 /**
