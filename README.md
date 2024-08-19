@@ -11,7 +11,7 @@ The purpose of this app is to allow a user to easily keep track of tasks that th
 #### Live site: https://semmtm.github.io/todo-list/
 #### Repository: https://github.com/SemMTM/todo-list
 
-- By Osama Hendawi
+### By Osama Hendawi
 
 ## Table of Contents
 1.
@@ -43,7 +43,7 @@ In terms of user experince, I really wanted to keep things as clean as possible.
 - I want to be able to delete tasks and mark them as complete
 
 ## Wireframes
-###Desktop & Mobile Wireframes
+### Desktop & Mobile Wireframes
 
 ## Features
 ### Adding Tasks to the Task List
@@ -57,37 +57,57 @@ In terms of user experince, I really wanted to keep things as clean as possible.
 
 - When a task is entered, the DOM is then updated with the task that the user entered. It is added to a 'incomplete tasks' list. These tasks can be added by clicking 'add' or by pressing enter. Once the task has been added, the 'add a task' field is cleared.
 
-![Tasks added to the list](assets/images/readme-images/Screenshot_14.png)
+![Tasks added to the list](assets/images/readme-images/Screenshot_33.png)
 
 - A cursor pointer is shown when a task is hovered over.
 
 ### Task Completion and Task Delete
 
-- Tasks can be marked as complete by clicking anywhere on the task. Once a task is marked as complete, it is moved to a 'completed' list and moved to the bottom of the list for organisation. Tasks marked as complete are also lined through, greyed out, the circle is filled in and a 'ding' sound is played to add a sense of acomplishment at your recently completed task.
+- Tasks can be marked as completed by clicking anywhere on the task. Once a task is marked as complete, it is moved to a 'completed' list and moved to the bottom of the list for organisation. Tasks marked as complete are also lined through, greyed out, the circle is filled in and a 'ding' sound is played to add a sense of acomplishment at your recently completed task.
 
-![Tasks marked as complete](assets/images/readme-images/Screenshot_15.png)
+![Tasks marked as complete](assets/images/readme-images/Screenshot_1.png)
 
 - Tasks can also be unchecked. Once a task is unchecked, it is added to the bottom of the incomplete task list. The score also updates accordingly.
 
 - Tasks can be completely deleted by pressing a small 'x' on the side of every task. This will completely delete the specific task from any list it was on and update the score accordingly.
 
-![Task delete](assets/images/readme-images/Screenshot_8.png)
+### Priority Tasks & Set Due Date
+- Tasks can be marked as priority by selecting the exclamation point. When tasks are marked as priority, they will be moved to the top of the task list, added to the 'priority tasks' counter and outlined in red.
 
+![Priority Task](assets/images/readme-images/Screenshot_17.png)
+
+- After pressing this priority button, a pop-up will appear. This pop-up asks the user if they wish to set a due date. The reason I have implemented this feature in such as way is that I wanted to allow the user to set priority tasks, as well as a due date and I did not want to add another separate button. This would cause the to do list to become overly cluttered and would not align with keeping it as clean as possible.
+
+![Priority Task pop up](assets/images/readme-images/Screenshot_18.png)
+
+- If they select no, then the task will be marked as priority, if they select a date and click 'set date' then a due date will appear below the task. This date has been formatted to be more readable for the user.
+
+![Due Date formatted](assets/images/readme-images/Screenshot_19.png)
+
+- This due date counter updates as the due date gets closer and the message changes depeneding on if the task is overdue or due soon. Tasks that are due soon will be moved to the top of the task list. The colour of the due message will change depending on how close the due date is.
+
+![Due date counter](assets/images/readme-images/Screenshot_22.png)
+
+- If no date is selected and the user hits 'set date', then they will recieve an error message.
+
+![error message](assets/images/readme-images/Screenshot_21.png)
+
+- To implement this live due date tracker, I had to use a for loop to iterate through all of the tasks in the 'incomplete' tasks list. It would then check the user set date and compare it to todays date. Different actions will then be called depending on how close or far the due date is.
 
 ### Tasks Score
 
-- A score tracker updates when tasks are added or marked as complete. This helps the user easily see how many tasks are remaining and how many they have completed.
+- A score tracker updates when tasks are added, marked as complete or marked as priority. This helps the user easily see how many tasks are remaining and how many they have completed.
 
 - If a task is deleted from either list, then the tracker updates.
 
-![Score tracker](assets/images/readme-images/Screenshot_9.png) 
+![Score tracker](assets/images/readme-images/Screenshot_2.png) 
 
 ### Editable Title
 
 - The title of the to do list is editable by the user so they can make it their own. 
 - If the field is empty, then a default 'My To-Do List' title is used.
 
-![Editable Title](assets/images/readme-images/Screenshot_10.png)
+![Editable Title](assets/images/readme-images/Screenshot_16.png)
 
 ### Save Data Locally 
 
@@ -100,10 +120,22 @@ In terms of user experince, I really wanted to keep things as clean as possible.
 - Almost every interaction a user makes with the To-Do list provides some sort of feedback. Most notibly, when a task is marked as complete a 'ding' sound will play. The purpose for this is to invoke a strong positive response from the user and encourange them to add and complete more tasks.
 
 
-## Features I Would Like To Add 
+## Future Features
 - The ability to create additional lists for seperate groups of tasks 
-- Add reminders to tasks 
-- Reorder tasks 
+- Reorder tasks via click and drag or drag and drop
+
+## Technology Used
+### HTML
+Used to structure my webpage.
+
+### CSS
+Used to style and layout the To-do List.
+
+### JavaScript
+Used to add all of the interactivity to the site, update the DOM based on what the user wants to do with their task, update the live counter, add the due dates, set priority tasks etc.
+
+### Font Awesome
+Used for the title icon.
 
 ## Testing 
 ### General Testing
