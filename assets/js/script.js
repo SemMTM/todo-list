@@ -183,10 +183,18 @@ function dueDateChecker() {
         let userDateInFormat = new Date(userSetDate);
         const oneDay = 24 * 60 * 60 * 1000; // hours*mins*secs*millisecs
         const diffDays = Math.round(Math.abs((currentDate - userDateInFormat) / oneDay));
+        let userDateString = userDateInFormat.toString();
+        let trimmedUserDate = userDateString.substring(0, 10);
+        let currentDateString = currentDate.toString();
+        let trimmedCurrentDate = currentDateString.substring(0, 10);
 
+        //If user dates is today
+        if (trimmedUserDate == trimmedCurrentDate) { 
+            incompleteTasks[i].lastChild.lastChild.innerHTML = " - <span style='color:red'> Due Today</span>";  
+        
         //If User date is less then current date
-        if (userDateInFormat < currentDate) {
-            incompleteTasks[i].lastChild.lastChild.innerHTML = " - <span style='color:red'> Overdue</span>";
+        } else if (userDateInFormat < currentDate) {
+            incompleteTasks[i].lastChild.lastChild.innerHTML = " - <span style='color:red'> Overdue</span>"; 
 
         //If there is no set date    
         } else if (incompleteTasks[i].lastChild.firstChild.textContent == '') {
