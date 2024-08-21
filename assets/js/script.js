@@ -120,9 +120,9 @@ function completeTask(event) {
  * Set and remove tasks as priority
  */
 function priorityTask(event) {
-    let lastClicked = event.target;
-    let task = lastClicked.parentNode;
-    const taskId = lastClicked.parentNode.id;
+    let lastClicked = event.currentTarget;
+    let task = lastClicked.parentElement;
+    const taskId = lastClicked.parentElement.id;
     let taskList = document.getElementById('incomplete-tasks');
     let datePopUp = document.getElementById('date-outer');
     const currentTaskId = document.querySelector(event.currentTarget.parentElement.id);
@@ -133,13 +133,8 @@ function priorityTask(event) {
     lastClicked.dataset.listId = taskId;
     const uniqueId = lastClicked.dataset.listId
     setPriorityBtn.dataset.listId = uniqueId
-    const currentSelectedTask = setPriorityBtn.dataset.listId
-
-    setPriorityBtn.addEventListener('click', function() {
-        //task.classList.toggle('priority-task');
-        //taskList.insertBefore(task, taskList.firstChild);
-        console.log(taskId);
-    });
+    const currentSelectedTaskId = setPriorityBtn.dataset.listId
+    const listItem = document.getElementById(`${currentSelectedTaskId}`);
 
     //Remove incomplete tasks from priority list and add it back to bottom of incomplete list
     ///if (task.classList.contains('priority-task') && task.classList.contains('incomplete')) {
@@ -157,6 +152,16 @@ function priorityTask(event) {
     saveTasks();
     dueDateChecker();
     saveTaskIds()
+}
+
+function test1() {
+    const setPriorityBtn = document.getElementById('set-priority-btn');
+    let buttonId = setPriorityBtn.dataset.listId;
+    const listItem = document.getElementById(`${buttonId}`);
+    const taskList = document.getElementById('incomplete-tasks');
+
+    listItem.classList.toggle('priority-task');
+    taskList.insertBefore(listItem, taskList.firstChild);
 }
 
 /**
