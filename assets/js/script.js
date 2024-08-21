@@ -11,7 +11,6 @@ totalTasksNumber = parseInt(localStorage.getItem("taskIdNumber", totalTasksNumbe
  * submitted with Enter press.
  */
 document.addEventListener("DOMContentLoaded", function() {
-    let buttons = document.getElementsByTagName('button');
 
     tasksLeft();
     tasksCompleted();
@@ -123,9 +122,7 @@ function priorityTask(event) {
     let lastClicked = event.currentTarget;
     let task = lastClicked.parentElement;
     const taskId = lastClicked.parentElement.id;
-    let taskList = document.getElementById('incomplete-tasks');
     let datePopUp = document.getElementById('date-outer');
-    const currentTaskId = document.querySelector(event.currentTarget.parentElement.id);
     const setPriorityBtn = document.getElementById('set-priority-btn');
 
     if (task.classList.contains('completed')) {
@@ -139,18 +136,6 @@ function priorityTask(event) {
         const listItem = document.getElementById(`${currentSelectedTaskId}`);
     }
 
-    //Remove incomplete tasks from priority list and add it back to bottom of incomplete list
-    ///if (task.classList.contains('priority-task') && task.classList.contains('incomplete')) {
-    //    task.classList.toggle('priority-task');
-    //    taskList.appendChild(task);
-
-    //Add incomplete tasks to priority list and move to the top     
-    //} else if (task.classList.contains !=='priority-task' && task.classList.contains('incomplete')){
-    //    datePopUp.classList.toggle('active');
-    //    datePopUp.classList.toggle('hidden');
-    //    task.classList.toggle('priority-task');
-    //    taskList.insertBefore(task, taskList.firstChild);
-    //}
     saveTasks();
     dueDateChecker();
     saveTaskIds()
