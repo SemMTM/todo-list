@@ -39,7 +39,8 @@ function addTask() {
     if (newTask == '') {
         alert('Please enter a new task!');
     } else {
-        //Appends new task to 'incomplete' tasl list
+        //Appends new task to 'incomplete' task list
+        totalTasksCounter()
         newListItem.textContent = newTask;
         list[0].appendChild(newListItem);
         newListItem.setAttribute("onclick", "completeTask(event)");
@@ -114,18 +115,20 @@ function priorityTask(event) {
     let taskList = document.getElementById('incomplete-tasks');
     let datePopUp = document.getElementById('date-outer');
 
+    datePopUp.classList.toggle('hidden');
+
     //Remove incomplete tasks from priority list and add it back to bottom of incomplete list
-    if (task.classList.contains('priority-task') && task.classList.contains('incomplete')) {
-        task.classList.toggle('priority-task');
-        taskList.appendChild(task);
+    ///if (task.classList.contains('priority-task') && task.classList.contains('incomplete')) {
+    //    task.classList.toggle('priority-task');
+    //    taskList.appendChild(task);
 
     //Add incomplete tasks to priority list and move to the top     
-    } else if (task.classList.contains !=='priority-task' && task.classList.contains('incomplete')){
-        datePopUp.classList.toggle('active');
-        datePopUp.classList.toggle('hidden');
-        task.classList.toggle('priority-task');
-        taskList.insertBefore(task, taskList.firstChild);
-    }
+    //} else if (task.classList.contains !=='priority-task' && task.classList.contains('incomplete')){
+    //    datePopUp.classList.toggle('active');
+    //    datePopUp.classList.toggle('hidden');
+    //    task.classList.toggle('priority-task');
+    //    taskList.insertBefore(task, taskList.firstChild);
+    //}
     priorityTasksRemaining();
     saveTasks();
     dueDateChecker();
@@ -244,6 +247,18 @@ function priorityTasksRemaining() {
     let priorityTaskCounter = document.getElementById('priority-tasks-left');
 
     priorityTaskCounter.textContent = priorityTasks;
+}
+
+let totalTasksNumber = 0;
+
+function totalTasksCounter() {
+    let taskIdCounter = document.getElementById('total-tasks');
+
+    totalTasksNumber += 1
+
+    let tasksId = `taskid${totalTasksNumber}`
+
+    taskIdCounter.textContent = tasksId;
 }
 
 /**
