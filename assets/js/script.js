@@ -2,9 +2,9 @@
 const input = document.getElementById('inputBox');
 let currentTasks = document.getElementById('incomplete-tasks');
 let title = document.getElementById('main-title');
-let totalTasksNumber = 0;
+let totalTasksNumber = 1;
 let taskIdCounter = document.getElementById('total-tasks');
-totalTasksNumber = parseInt(localStorage.getItem("taskIdNumber", totalTasksNumber));
+totalTasksNumber = parseInt(localStorage.getItem("taskIdNumber", totalTasksNumber)) || 0;
 
 /**
  * Add listener for a click of enter button so tasks can be 

@@ -237,6 +237,7 @@ Fonts and colors used are easily to read and accessibility has been tested on go
 - How to get sound to play on click event: https://www.youtube.com/watch?v=0R6rZngcHGg
 - How to calculate the difference between two dates in days: https://stackoverflow.com/questions/2627473/how-to-calculate-the-number-of-days-between-two-dates
 - How to convert dates from string format to date format: https://www.turing.com/kb/converting-string-to-date-in-js
+- Using parseInt to convert a value into a number: https://stackoverflow.com/questions/17388503/how-to-save-a-number-into-localstorage-that-increments-each-time-the-user-enters
 
 ### Media
 - Font awesome icon used: https://fontawesome.com/icons/list?f=classic&s=solid
