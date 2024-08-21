@@ -2,6 +2,9 @@
 const input = document.getElementById('inputBox');
 let currentTasks = document.getElementById('incomplete-tasks');
 let title = document.getElementById('main-title');
+let totalTasksNumber = 0;
+let taskIdCounter = document.getElementById('total-tasks');
+totalTasksNumber = parseInt(localStorage.getItem("taskIdNumber", totalTasksNumber));
 
 /**
  * Add listener for a click of enter button so tasks can be 
@@ -45,6 +48,9 @@ function addTask() {
         list[0].appendChild(newListItem);
         newListItem.setAttribute("onclick", "completeTask(event)");
         newListItem.classList.add('incomplete');
+        newListItem.setAttribute("id", `taskid${totalTasksNumber}`);
+        saveTaskIds();
+        console.log(totalTasksNumber);
         
         //Add Delete Button
         newListItem.appendChild(deleteTask);
@@ -70,6 +76,7 @@ function addTask() {
     tasksCompleted();
     priorityTasksRemaining();
     dueDateChecker();
+    saveTaskIds()
 }
 
 /**
@@ -104,6 +111,7 @@ function completeTask(event) {
     tasksCompleted();
     priorityTasksRemaining();
     dueDateChecker();
+    saveTaskIds()
 }
 
 /**
@@ -132,6 +140,7 @@ function priorityTask(event) {
     priorityTasksRemaining();
     saveTasks();
     dueDateChecker();
+    saveTaskIds()
 }
 
 /**
@@ -168,6 +177,7 @@ function taskDueDate() {
     }
     priorityTasksRemaining();
     saveTasks();
+    saveTaskIds()
     dueDateChecker();
 }
 
@@ -249,17 +259,24 @@ function priorityTasksRemaining() {
     priorityTaskCounter.textContent = priorityTasks;
 }
 
-let totalTasksNumber = 0;
-
 function totalTasksCounter() {
-    let taskIdCounter = document.getElementById('total-tasks');
-
     totalTasksNumber += 1
 
     let tasksId = `taskid${totalTasksNumber}`
 
     taskIdCounter.textContent = tasksId;
 }
+
+function saveTaskIds() {
+    localStorage.setItem("taskIdNumber", totalTasksNumber);
+    localStorage.setItem("taskIdNumberText", taskIdCounter.textContent);
+}
+
+function getTaskIds() {
+    localStorage.getItem("taskIdNumber", totalTasksNumber);
+    taskIdCounter.textContent = localStorage.getItem("taskIdNumberText", taskIdCounter.textContent);
+}
+getTaskIds()
 
 /**
  * Functions to save task data locally and retrieve it
