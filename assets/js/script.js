@@ -127,14 +127,17 @@ function priorityTask(event) {
     let datePopUp = document.getElementById('date-outer');
     const currentTaskId = document.querySelector(event.currentTarget.parentElement.id);
     const setPriorityBtn = document.getElementById('set-priority-btn');
-    const removePriorityBtn = document.getElementById('remove-priority-btn');
 
-    datePopUp.classList.toggle('hidden');
-    lastClicked.dataset.listId = taskId;
-    const uniqueId = lastClicked.dataset.listId
-    setPriorityBtn.dataset.listId = uniqueId
-    const currentSelectedTaskId = setPriorityBtn.dataset.listId
-    const listItem = document.getElementById(`${currentSelectedTaskId}`);
+    if (task.classList.contains('completed')) {
+        //Do nothing if task is marked as complete
+    } else {
+        datePopUp.classList.toggle('hidden');
+        lastClicked.dataset.listId = taskId;
+        const uniqueId = lastClicked.dataset.listId
+        setPriorityBtn.dataset.listId = uniqueId
+        const currentSelectedTaskId = setPriorityBtn.dataset.listId
+        const listItem = document.getElementById(`${currentSelectedTaskId}`);
+    }
 
     //Remove incomplete tasks from priority list and add it back to bottom of incomplete list
     ///if (task.classList.contains('priority-task') && task.classList.contains('incomplete')) {
@@ -148,20 +151,30 @@ function priorityTask(event) {
     //    task.classList.toggle('priority-task');
     //    taskList.insertBefore(task, taskList.firstChild);
     //}
-    priorityTasksRemaining();
     saveTasks();
     dueDateChecker();
     saveTaskIds()
 }
 
-function test1() {
+function setPriority() {
     const setPriorityBtn = document.getElementById('set-priority-btn');
     let buttonId = setPriorityBtn.dataset.listId;
     const listItem = document.getElementById(`${buttonId}`);
     const taskList = document.getElementById('incomplete-tasks');
+    const removePriorityBtn = document.getElementById('remove-priority-btn');
+    let datePopUp = document.getElementById('date-outer');
 
     listItem.classList.toggle('priority-task');
-    taskList.insertBefore(listItem, taskList.firstChild);
+
+    if (listItem.classList.contains('priority-task')) {
+        taskList.insertBefore(listItem, taskList.firstChild);
+    } else {
+        taskList.insertBefore(listItem, taskList.lastChild)
+    }
+    datePopUp.classList.toggle('hidden');
+
+    priorityTasksRemaining();
+    saveTasks();
 }
 
 /**
