@@ -48,6 +48,8 @@ function addTask() {
         list[0].appendChild(newListItem);
         newListItem.setAttribute("onclick", "completeTask(event)");
         newListItem.classList.add('incomplete');
+
+        //Assigns each new task a unique ID
         newListItem.setAttribute("id", `taskid${totalTasksNumber}`);
         saveTaskIds();
         console.log(totalTasksNumber);
@@ -120,10 +122,24 @@ function completeTask(event) {
 function priorityTask(event) {
     let lastClicked = event.target;
     let task = lastClicked.parentNode;
+    const taskId = lastClicked.parentNode.id;
     let taskList = document.getElementById('incomplete-tasks');
     let datePopUp = document.getElementById('date-outer');
+    const currentTaskId = document.querySelector(event.currentTarget.parentElement.id);
+    const setPriorityBtn = document.getElementById('set-priority-btn');
+    const removePriorityBtn = document.getElementById('remove-priority-btn');
 
     datePopUp.classList.toggle('hidden');
+    lastClicked.dataset.listId = taskId;
+    const uniqueId = lastClicked.dataset.listId
+    setPriorityBtn.dataset.listId = uniqueId
+    const currentSelectedTask = setPriorityBtn.dataset.listId
+
+    setPriorityBtn.addEventListener('click', function() {
+        //task.classList.toggle('priority-task');
+        //taskList.insertBefore(task, taskList.firstChild);
+        console.log(taskId);
+    });
 
     //Remove incomplete tasks from priority list and add it back to bottom of incomplete list
     ///if (task.classList.contains('priority-task') && task.classList.contains('incomplete')) {
@@ -249,7 +265,7 @@ function tasksCompleted() {
     completedTasksCounter.textContent = completedTasksLength;
 }
 
-/**s
+/**
  * Calculates the number of priority tasks
  */
 function priorityTasksRemaining() {
@@ -259,6 +275,9 @@ function priorityTasksRemaining() {
     priorityTaskCounter.textContent = priorityTasks;
 }
 
+/**
+ * Increment counter everytime new task is made and assign tasksIds a unique ID
+ */
 function totalTasksCounter() {
     totalTasksNumber += 1
 
@@ -267,6 +286,7 @@ function totalTasksCounter() {
     taskIdCounter.textContent = tasksId;
 }
 
+//Functions to save and retrieve tasks unique Ids
 function saveTaskIds() {
     localStorage.setItem("taskIdNumber", totalTasksNumber);
     localStorage.setItem("taskIdNumberText", taskIdCounter.textContent);
