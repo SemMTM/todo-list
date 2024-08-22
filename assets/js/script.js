@@ -90,7 +90,8 @@ function completeTask(event) {
     
     // If a task is deleted
     if (lastClicked.classList.contains("deletebtn")) {
-        lastClicked.parentNode.remove();
+        deleteTask();
+        //lastClicked.parentNode.remove();
 
     // If a task is marked as completed    
     } else if (lastClicked.classList.contains('incomplete')) {
@@ -115,6 +116,10 @@ function completeTask(event) {
     saveTaskIds()
 }
 
+function deleteTask() {
+    const deletePopUp = document.getElementById('delete-pop-up');
+}
+
 /**
  * Set and remove tasks as priority
  */
@@ -132,8 +137,6 @@ function priorityTask(event) {
         lastClicked.dataset.listId = taskId;
         const uniqueId = lastClicked.dataset.listId
         setPriorityBtn.dataset.listId = uniqueId
-        const currentSelectedTaskId = setPriorityBtn.dataset.listId
-        const listItem = document.getElementById(`${currentSelectedTaskId}`);
     }
 
     saveTasks();
@@ -146,7 +149,6 @@ function setPriority() {
     let buttonId = setPriorityBtn.dataset.listId;
     const listItem = document.getElementById(`${buttonId}`);
     const taskList = document.getElementById('incomplete-tasks');
-    const removePriorityBtn = document.getElementById('remove-priority-btn');
     let datePopUp = document.getElementById('date-outer');
 
     listItem.classList.toggle('priority-task');
@@ -179,10 +181,7 @@ function taskDueDate() {
     let selectedDate = document.getElementById('task-date').value;
     let datePopUp = document.getElementById('date-outer');
     let selectedTask = document.getElementById('incomplete-tasks').firstChild;
-    const oneDay = 24 * 60 * 60 * 1000; // hours*mins*secs*millisecs
-    let currentDate = new Date();
     let dateInFormat = new Date(selectedDate);
-    const diffDays = Math.round(Math.abs((currentDate - dateInFormat) / oneDay));
     let userDateString = dateInFormat.toString();
     let trimmedUserDate = userDateString.substring(0, 10);
 
@@ -206,7 +205,6 @@ function taskDueDate() {
 function dueDateChecker() {
     const incompleteTasks = currentTasks.getElementsByTagName("li");
     let remainingTasksLength = incompleteTasks.length;
-    let dueDate = document.getElementsByClassName('due-date').value;
     let currentDate = new Date();
 
     //Loop to iterate through incomplete tasks
