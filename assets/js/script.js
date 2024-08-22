@@ -97,7 +97,6 @@ function completeTask(event) {
         deletePopUp.classList.toggle('hidden');
         const uniqueId = lastClicked.dataset.listId;
         deleteBtn.dataset.listId = uniqueId;
-        //lastClicked.parentNode.remove();
 
     // If a task is marked as completed    
     } else if (lastClicked.classList.contains('incomplete')) {
@@ -122,7 +121,7 @@ function completeTask(event) {
     saveTaskIds()
 }
 
-function deleteTask() {
+function deleteTask(event) {
     let lastClicked = event.currentTarget;
     const deletePopUp = document.getElementById('delete-pop-up');
     const deleteBtn = document.getElementById('delete-task-btn');
