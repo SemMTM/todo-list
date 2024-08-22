@@ -222,7 +222,7 @@ ul li::before {
 }
 
 /* Set Date Pop Up Styles */
-#date-outer {
+#container-outer {
     width: 100%;
     position: absolute;
     top: 35%;
@@ -232,7 +232,7 @@ ul li::before {
     font-size: 13px;
 }
 
-#set-date-pop-up {
+.pop-up {
     background-color: #1d1d1d;
     box-sizing: border-box;
     padding: 10px;
@@ -242,7 +242,7 @@ ul li::before {
     box-shadow: 3px 3px 3px #15151556;
 }
 
-#date-container-inner {
+.container-inner {
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -270,7 +270,7 @@ ul li::before {
     margin-bottom: 15px;
 }
 
-#buttons-container {
+.buttons-container {
     display: flex;
 }
 
