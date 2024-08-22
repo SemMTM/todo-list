@@ -87,10 +87,16 @@ function addTask() {
 function completeTask(event) {
     let lastClicked = event.target;
     let listParent = document.getElementsByTagName('ul');
+    const taskId = lastClicked.parentElement.id;
+    const deletePopUp = document.getElementById('delete-pop-up');
+    const deleteBtn = document.getElementById('delete-task-btn');
     
     // If a task is deleted
     if (lastClicked.classList.contains("deletebtn")) {
-        deleteTask();
+        lastClicked.dataset.listId = taskId;
+        deletePopUp.classList.toggle('hidden');
+        const uniqueId = lastClicked.dataset.listId;
+        deleteBtn.dataset.listId = uniqueId;
         //lastClicked.parentNode.remove();
 
     // If a task is marked as completed    
@@ -116,15 +122,23 @@ function completeTask(event) {
     saveTaskIds()
 }
 
-function deleteTask(event) {
+function deleteTask() {
     let lastClicked = event.currentTarget;
-    let task = lastClicked.parentElement;
-    const taskId = lastClicked.parentElement.id;
+    const deletePopUp = document.getElementById('delete-pop-up');
+    const deleteBtn = document.getElementById('delete-task-btn');
+    let buttonId = deleteBtn.dataset.listId;
+    const listItem = document.getElementById(`${buttonId}`);
+
+    const uniqueId = lastClicked.dataset.listId;
+    deleteBtn.dataset.listId = uniqueId;
+    listItem.remove();
+    deletePopUp.classList.toggle('hidden');
+}
+
+function closeDeletePopUp() {
     const deletePopUp = document.getElementById('delete-pop-up');
 
     deletePopUp.classList.toggle('hidden');
-    lastClicked.dataset.listId = taskId;
-    const uniqueId = lastClicked.dataset.listId
 }
 
 /**
@@ -142,13 +156,13 @@ function priorityTask(event) {
     } else {
         datePopUp.classList.toggle('hidden');
         lastClicked.dataset.listId = taskId;
-        const uniqueId = lastClicked.dataset.listId
-        setPriorityBtn.dataset.listId = uniqueId
+        const uniqueId = lastClicked.dataset.listId;
+        setPriorityBtn.dataset.listId = uniqueId;
     }
 
     saveTasks();
     dueDateChecker();
-    saveTaskIds()
+    saveTaskIds();
 }
 
 function setPriority() {
