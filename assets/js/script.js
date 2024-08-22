@@ -116,8 +116,15 @@ function completeTask(event) {
     saveTaskIds()
 }
 
-function deleteTask() {
+function deleteTask(event) {
+    let lastClicked = event.currentTarget;
+    let task = lastClicked.parentElement;
+    const taskId = lastClicked.parentElement.id;
     const deletePopUp = document.getElementById('delete-pop-up');
+
+    deletePopUp.classList.toggle('hidden');
+    lastClicked.dataset.listId = taskId;
+    const uniqueId = lastClicked.dataset.listId
 }
 
 /**
