@@ -74,22 +74,24 @@ In terms of user experince, I really wanted to keep things as clean as possible.
 
 - Tasks can also be unchecked. Once a task is unchecked, it is added to the bottom of the incomplete task list. The score also updates accordingly.
 
-- Tasks can be completely deleted by pressing a small 'x' on the side of every task. This will completely delete the specific task from any list it was on and update the score accordingly.
+- Tasks can be completely deleted by pressing a small 'x' on the side of every task. A pop up will then appear asking the user if they want to delete the task. if they press 'Delete Task' then then this will completely delete the specific task from any list it was on and update the score accordingly.
+
+![Tasks delete pop up](assets/images/readme-images/Screenshot_31.png)
 
 ### Priority Tasks & Set Due Date
-- Tasks can be marked as priority by selecting the exclamation point. When tasks are marked as priority, they will be moved to the top of the task list, added to the 'priority tasks' counter and outlined in red.
+- After pressing the exclamation point button, a pop-up will appear. This pop-up asks the user if they wish to set a due date. The reason I have implemented this feature in such as way is that I wanted to allow the user to set priority tasks, as well as a due date and I did not want to add another separate button. This would cause the to do list to become overly cluttered and would not align with keeping it as clean as possible.
 
-![Priority Task](assets/images/readme-images/Screenshot_17.png)
+![Pop up](assets/images/readme-images/Screenshot_34.png)
 
-- After pressing this priority button, a pop-up will appear. This pop-up asks the user if they wish to set a due date. The reason I have implemented this feature in such as way is that I wanted to allow the user to set priority tasks, as well as a due date and I did not want to add another separate button. This would cause the to do list to become overly cluttered and would not align with keeping it as clean as possible.
+- Tasks can be marked as priority by selecting the 'Set/Remove Priority' in the pop up. When tasks are marked as priority, they will be moved to the top of the task list, added to the 'priority tasks' counter and outlined in red.
 
-![Priority Task pop up](assets/images/readme-images/Screenshot_18.png)
+![Task set as priority](assets/images/readme-images/Screenshot_30.png)
 
-- If they select no, then the task will be marked as priority, if they select a date and click 'set date' then a due date will appear below the task. This date has been formatted to be more readable for the user.
+- The user can also select a date and click 'set date'. A due date will appear below the task. This date has been formatted to be more readable for the user.
 
 ![Due Date formatted](assets/images/readme-images/Screenshot_19.png)
 
-- This due date counter updates as the due date gets closer and the message changes depeneding on if the task is overdue or due soon. Tasks that are due soon will be moved to the top of the task list. The colour of the due message will change depending on how close the due date is.
+- This due date counter updates as the due date gets closer and the message changes depeneding on if the task is overdue or due soon. The colour of the due message will change depending on how close the due date is.
 
 ![Due date counter](assets/images/readme-images/Screenshot_22.png)
 
@@ -119,6 +121,8 @@ In terms of user experince, I really wanted to keep things as clean as possible.
 - Remaining tasks and the custom title name are saved to the browser locally so that a user can return to their tasks without needing to retype everything.
 
 - Completed tasks are not saved so the list is tidyed up when the user next returns.
+
+- Any action a user takes will be saved locally.
 
 ### Response To The User
 
@@ -151,8 +155,10 @@ In terms of user experince, I really wanted to keep things as clean as possible.
 | All text is legible on different screen sizes and pages | Pass |
 | All forms have client side validation and need information before they can be submitted | Pass |
 | Tasks are added to the list on button click or enter press | Pass |
+| Unique task IDs are generated correctly and saved | Pass |
 | Tasks counter updates when tasks sate changes | Pass |
 | Task delete works correctly  | Pass |
+| Correct task is deleted when delete is pressed | Pass |
 | Task are put into the correct list depending on if they have been marked as complete or not | Pass |
 | Local data save and retrieval work as intended  | Pass |
 | Task auto ordering works correctly | Pass |
@@ -160,9 +166,10 @@ In terms of user experince, I really wanted to keep things as clean as possible.
 | Title can be edited and is saved | Pass |
 | :onhover for all relevant elements works correctly | Pass |
 | Set due date pop-up appears when priority button is pressed | Pass |
-| Set due date pop-up is styled and cantered correctly | Pass |
+| Set due date pop-up is styled and centered correctly | Pass |
 | Date select input works correctly and alert is shown if not date is selected | Pass |
 | Priority tasks are outlined and moved to the top of the tasks list  | Pass |
+| Correct task is marked as priority when Set Priority button is pressed | Pass |
 | When a date is set, the due date is shown under the task and 'Due in...' counter loads correctly | Pass |
 | When 'No' is pressed on the due date pop-up, the task is set as priority and no due date is set | Pass |
 | 'Due in..' reminder updates live and changes colour when conditions are met | Pass |
@@ -244,6 +251,7 @@ Fonts and colors used are easily to read and accessibility has been tested on go
 
 ### Acknowledgements
 > My mentor Alan Bushell, who provided amazing constructive feedback and clear areas for improvement to improve the entire project.
+> I had help from a Code Institute tutor who helped me create unqiue task Ids and parse data to needed elements.
 
 ## Deployment
 - The app was deployed to Github pages. The steps to deploy are as follows:
