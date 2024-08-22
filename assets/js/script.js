@@ -82,7 +82,7 @@ function addTask() {
 
 /**
  * Toggles 'complete' class so clicked on tasks are marked as completed.
- * Deletes tasks when x is clicked.
+ * Opens delete task pop up when X is pressed
  */
 function completeTask(event) {
     let lastClicked = event.target;
@@ -132,6 +132,7 @@ function deleteTask(event) {
     deleteBtn.dataset.listId = uniqueId;
     listItem.remove();
     deletePopUp.classList.toggle('hidden');
+    saveTasks();
 }
 
 function closeDeletePopUp() {
@@ -200,18 +201,20 @@ function closeDatePopUp() {
 function taskDueDate() {
     let selectedDate = document.getElementById('task-date').value;
     let datePopUp = document.getElementById('date-outer');
-    let selectedTask = document.getElementById('incomplete-tasks').firstChild;
     let dateInFormat = new Date(selectedDate);
     let userDateString = dateInFormat.toString();
     let trimmedUserDate = userDateString.substring(0, 10);
+    const setPriorityBtn = document.getElementById('set-priority-btn');
+    let buttonId = setPriorityBtn.dataset.listId;
+    const listItem = document.getElementById(`${buttonId}`);
 
     if (selectedDate == '') {
         alert ('Please select a date');
     } else {
         // Creates due date on task
         datePopUp.classList.toggle('hidden');
-        selectedTask.lastChild.firstChild.textContent = selectedDate;
-        selectedTask.lastChild.children[1].innerHTML = `${trimmedUserDate}`;
+        listItem.lastChild.firstChild.textContent = selectedDate;
+        listItem.lastChild.children[1].innerHTML = `${trimmedUserDate}`;
     }
     priorityTasksRemaining();
     saveTasks();
@@ -240,7 +243,7 @@ function dueDateChecker() {
 
         //If user dates is today
         if (trimmedUserDate == trimmedCurrentDate) { 
-            incompleteTasks[i].lastChild.lastChild.innerHTML = " - <span style='color:red'> Due Today</span>";  
+            incompleteTasks[i].lastChild.lastChild.innerHTML = " - <span style='color:#00D4FF'> Due Today</span>";  
         
         //If User date is less then current date
         } else if (userDateInFormat < currentDate) {
@@ -255,8 +258,7 @@ function dueDateChecker() {
             if (diffDays > 5) {
                 incompleteTasks[i].lastChild.lastChild.innerHTML = ` - Due in ${diffDays} Days`;
             } else if (diffDays <= 1) {
-                incompleteTasks[i].lastChild.lastChild.innerHTML = " - <span style='color:red'> Due soon</span>";
-                currentTasks.insertBefore(incompleteTasks[i], currentTasks.firstChild);
+                incompleteTasks[i].lastChild.lastChild.innerHTML = " - <span style='color:#3A78FF'> Due soon</span>";
             } else {
                 incompleteTasks[i].lastChild.lastChild.innerHTML = ` - <span style='color:orange'> Due in ${diffDays} Days</span>`;
             }

@@ -222,7 +222,7 @@ ul li::before {
 }
 
 /* Set Date Pop Up Styles */
-#container-outer {
+.container-outer {
     width: 100%;
     position: absolute;
     top: 35%;
