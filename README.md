@@ -156,24 +156,26 @@ In terms of user experince, I really wanted to keep things as clean as possible.
 | All forms have client side validation and need information before they can be submitted | Pass |
 | Tasks are added to the list on button click or enter press | Pass |
 | Unique task IDs are generated correctly and saved | Pass |
+| Task ID parsing to selected elements on function call | Pass |
 | Tasks counter updates when tasks sate changes | Pass |
-| Task delete works correctly  | Pass |
 | Correct task is deleted when delete is pressed | Pass |
 | Task are put into the correct list depending on if they have been marked as complete or not | Pass |
-| Local data save and retrieval work as intended  | Pass |
+| Local data save and retrieval work | Pass |
 | Task auto ordering works correctly | Pass |
 | Task complete notification plays when a task is marked as complete | Pass |
 | Title can be edited and is saved | Pass |
 | :onhover for all relevant elements works correctly | Pass |
-| Set due date pop-up appears when priority button is pressed | Pass |
+| Set due date pop-up appears when ! button is pressed | Pass |
 | Set due date pop-up is styled and centered correctly | Pass |
+| Due date is set on the correct task when date is selected and 'Set Date' is pressed | Pass |
 | Date select input works correctly and alert is shown if not date is selected | Pass |
 | Priority tasks are outlined and moved to the top of the tasks list  | Pass |
 | Correct task is marked as priority when Set Priority button is pressed | Pass |
 | When a date is set, the due date is shown under the task and 'Due in...' counter loads correctly | Pass |
-| When 'No' is pressed on the due date pop-up, the task is set as priority and no due date is set | Pass |
 | 'Due in..' reminder updates live and changes colour when conditions are met | Pass |
-| Completed tasks cannot be set as priority or with a due date  | Pass |
+| Delete task pop up is closed when either buttons are pressed | Pass |
+| Due date/set priority pop up is closed when X or any button is pressed | Pass | 
+| Completed tasks cannot be set as priority or with a due date | Pass |
 | Priority is removed once a task is marked as complete | Pass |
 | Completed tasks are not saved. This is for list organisation and clean-up | Pass |
 | Due dates appear correctly on mobile | Pass |
@@ -207,11 +209,10 @@ No errors when passing the stylesheet through the validator.
 
 ### JavaScript 
 No errors when passing script.js through the Jshint validator
-- There are 16 functions in this file.
+- There are 22 functions in this file.
 - Function with the largest signature take 1 arguments, while the median is 0.
-- Largest function has 27 statements in it, while the median is 3.5.
-- The most complex function has a cyclomatic complexity value of 6 while the median is 1.
-- No nignificant warnings.
+- Largest function has 32 statements in it, while the median is 3.
+- The most complex function has a cyclomatic complexity value of 7 while the median is 1.
 
 ### Accessibility 
 Fonts and colors used are easily to read and accessibility has been tested on google speed test
