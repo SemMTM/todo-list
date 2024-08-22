@@ -61,7 +61,7 @@ h5 {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;;
 }
 
@@ -69,8 +69,7 @@ h5 {
 #main-container {
     background-color: #3b3b3b;
     width: 100%;
-    max-width: 450px;
-    padding: 5px 45px 10px 45px;
+    max-width: 500px;
     margin: 100px auto 10px;
     border-radius: 5px;
 }
@@ -120,7 +119,7 @@ ul {
 
 ul li {
     list-style: none;
-    padding: 10px 40px; 
+    padding: 10px 67px 10px 40px; 
     position: relative;
     cursor: pointer;
     background-color: #4a4a4a;
@@ -128,6 +127,7 @@ ul li {
     border-radius: 10px;
     color: #e9e9e9;
     box-shadow: 3px 3px 3px #15151556;
+    font-size: 14px;
 }
 
 ul li:hover {
@@ -214,7 +214,7 @@ ul li::before {
     padding: 5px;
     background-color: #3b3b3b;
     border-radius: 5px;
-    width: 300px;
+    width: 200px;
     order: 1;
     margin: 100px 10px 10px 10px;
     align-self: flex-start;
