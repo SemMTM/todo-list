@@ -42,7 +42,7 @@ function addTask() {
         alert('Please enter a new task!');
     } else {
         //Appends new task to 'incomplete' task list
-        totalTasksCounter()
+        totalTasksCounter();
         newListItem.textContent = newTask;
         list[0].appendChild(newListItem);
         newListItem.setAttribute("onclick", "completeTask(event)");
@@ -77,7 +77,7 @@ function addTask() {
     tasksCompleted();
     priorityTasksRemaining();
     dueDateChecker();
-    saveTaskIds()
+    saveTaskIds();
 }
 
 /**
@@ -118,7 +118,7 @@ function completeTask(event) {
     tasksCompleted();
     priorityTasksRemaining();
     dueDateChecker();
-    saveTaskIds()
+    saveTaskIds();
 }
 
 function deleteTask(event) {
@@ -132,7 +132,11 @@ function deleteTask(event) {
     deleteBtn.dataset.listId = uniqueId;
     listItem.remove();
     deletePopUp.classList.toggle('hidden');
+
     saveTasks();
+    tasksCompleted();
+    priorityTasksRemaining();
+    tasksLeft();
 }
 
 function closeDeletePopUp() {
@@ -177,7 +181,7 @@ function setPriority() {
     if (listItem.classList.contains('priority-task')) {
         taskList.insertBefore(listItem, taskList.firstChild);
     } else {
-        taskList.insertBefore(listItem, taskList.lastChild)
+        taskList.insertBefore(listItem, taskList.lastChild);
     }
     datePopUp.classList.toggle('hidden');
 
@@ -218,7 +222,7 @@ function taskDueDate() {
     }
     priorityTasksRemaining();
     saveTasks();
-    saveTaskIds()
+    saveTaskIds();
     dueDateChecker();
 }
 
@@ -243,7 +247,7 @@ function dueDateChecker() {
 
         //If user dates is today
         if (trimmedUserDate == trimmedCurrentDate) { 
-            incompleteTasks[i].lastChild.lastChild.innerHTML = " - <span style='color:#00D4FF'> Due Today</span>";  
+            incompleteTasks[i].lastChild.lastChild.innerHTML = " - <span style='color:#6495FF'> Due Today</span>";  
         
         //If User date is less then current date
         } else if (userDateInFormat < currentDate) {
@@ -258,7 +262,7 @@ function dueDateChecker() {
             if (diffDays > 5) {
                 incompleteTasks[i].lastChild.lastChild.innerHTML = ` - Due in ${diffDays} Days`;
             } else if (diffDays <= 1) {
-                incompleteTasks[i].lastChild.lastChild.innerHTML = " - <span style='color:#3A78FF'> Due soon</span>";
+                incompleteTasks[i].lastChild.lastChild.innerHTML = " - <span style='color:orange'> Due soon</span>";
             } else {
                 incompleteTasks[i].lastChild.lastChild.innerHTML = ` - <span style='color:orange'> Due in ${diffDays} Days</span>`;
             }
@@ -302,9 +306,9 @@ function priorityTasksRemaining() {
  * Increment counter everytime new task is made and assign tasksIds a unique ID
  */
 function totalTasksCounter() {
-    totalTasksNumber += 1
+    totalTasksNumber += 1;
 
-    let tasksId = `taskid${totalTasksNumber}`
+    let tasksId = `taskid${totalTasksNumber}`;
 
     taskIdCounter.textContent = tasksId;
 }
@@ -319,7 +323,7 @@ function getTaskIds() {
     localStorage.getItem("taskIdNumber", totalTasksNumber);
     taskIdCounter.textContent = localStorage.getItem("taskIdNumberText", taskIdCounter.textContent);
 }
-getTaskIds()
+getTaskIds();
 
 /**
  * Functions to save task data locally and retrieve it

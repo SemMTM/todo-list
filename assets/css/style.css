@@ -295,17 +295,17 @@ ul li::before {
 }
 
 .due-date {
-    font-size: 13px;
+    font-size: 12px;
     display: inline;
 }
 
 .task-due-in {
-    font-size: 13px;
+    font-size: 12px;
     display: inline;
 }
 
 .informat-due-date {
-    font-size: 13px;
+    font-size: 12px;
     display: inline;
 }
 
