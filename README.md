@@ -85,6 +85,9 @@ In terms of user experince, I really wanted to keep things as clean as possible.
 
 - Tasks can be marked as priority by selecting the 'Set/Remove Priority' in the pop up. When tasks are marked as priority, they will be moved to the top of the task list, added to the 'priority tasks' counter and outlined in red.
 
+- To implement this feature I had to give every task a uniquely generated TaskId, this Id had to be saved locally so no duplicate IDs were produced after browser refresh. I then took the ID from the task, parsed it to the ! button when pressed, then parsed it from the ! button to the Set/Remove priority button. I then take this ID from the data attribute on the button and use it to select the task with the matching ID. 
+- This process was used for date setting, task delete and task priority features.
+
 ![Task set as priority](assets/images/readme-images/Screenshot_30.png)
 
 - The user can also select a date and click 'set date'. A due date will appear below the task. This date has been formatted to be more readable for the user.
@@ -246,6 +249,7 @@ Fonts and colors used are easily to read and accessibility has been tested on go
 - How to calculate the difference between two dates in days: https://stackoverflow.com/questions/2627473/how-to-calculate-the-number-of-days-between-two-dates
 - How to convert dates from string format to date format: https://www.turing.com/kb/converting-string-to-date-in-js
 - Using parseInt to convert a value into a number: https://stackoverflow.com/questions/17388503/how-to-save-a-number-into-localstorage-that-increments-each-time-the-user-enters
+- How to save data locally: https://www.geeksforgeeks.org/how-to-save-data-in-local-storage-in-javascript/
 
 ### Media
 - Font awesome icon used: https://fontawesome.com/icons/list?f=classic&s=solid
