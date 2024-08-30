@@ -5,7 +5,7 @@
 Simple To-Do List is a JavaScript web app that is a simple yet effective way to track tasks that need to be done and can be easily used by anyone for any tasks. It is simple by design for 2 reasons: 
  - A To-Do list is something that does not need to be overly complicated. The focus should be on the tasks that need completeing.
  - It can be easily used by anyone, regardless of technical ability.
- 
+
 The purpose of this app is to allow a user to easily keep track of tasks that they need to complete, see the tasks they have completed and get a sense of accomplishment from the "ding" after each task completion. They can see scores which indicate the tasks remaining, the completed tasks and the number of priority tasks.
 
 #### Live site: https://semmtm.github.io/todo-list/
@@ -23,34 +23,43 @@ The purpose of this app is to allow a user to easily keep track of tasks that th
 7. Credits
 8. Deployment
 
-## UX
-### Pre-project Planning
-For project 2 I decided I wanted to challenge myself and create something that was'nt in one of the suggested projects. I came to the idea of a to-do list as this is something I use regularly and it would really test my abilities with JavaScript as I have not done anything like this previously.
+## 1. UX
+### 1.1. Pre-project Planning
+For project 2 I decided I wanted to challenge myself and create something that wasn't in one of the suggested projects. I came to the idea of a to-do list as this is something I use regularly and it would really test my abilities with JavaScript as I have not done anything like this previously.
 
-There were a few main things I wanted this to-do list to have:
+There were a few key project goals:
 
-- A due date and priority tasks feature
+- Have a due date and priority tasks feature
 - Counters to show remaining tasks
-- Save task data locally so the user does no have to re-enter their tasks each time 
+- Save task data locally so the user does not have to re-enter their tasks each time 
 
-### UX Design
+### 1.2. UX Design
 In terms of user experince, I really wanted to keep things as clean as possible. I wanted the task list to be efficient, easy to use, clean and organised for the user. I wanted the colours to be more neutral and not distracting, I wanted a font that would be easily legible and poisitve feedback for task completion. Some other considerations were:  
 
 - There had to be a clear distinction between completed and incomplete tasks
 - Priority tasks had to be obvious 
 - Simplicity was to be the main priority in terms of design
 
-## User Stories 
-### User
-- As a user I want to be able to keep an organised list of tasks that need doing
-- As a user I want to be able to set due dates for important tasks that need doing first. I also want a clear indication of when these tasks are due and how long I have left to complete them
-- As a user I want to be able to mark tasks as priority
-- I want to be able to delete tasks and mark them as complete
+## 1.3. User Stories 
+### 1.4. User
+- First Time Visitor Goals
+  - As a first time visitor, I want to know how to use the app easily.
+  - As a first time visitor, I want to be able to easily navigate the app.
+  - As a first time visitor, I want to add a task quickly.
 
-## Wireframes
-### Desktop & Mobile Wireframes
+- Returning Visitor Goals
+  - As a returning visitor, I want to be able to see my previously added tasks
 
-## Features
+- General User Goals
+  - As a user I want to be able to keep an organised list of tasks that need doing
+  - As a user I want to be able to set due dates for important tasks that need doing first. I also want a clear indication of when these tasks are due and how long I have left to complete them
+  - As a user I want to be able to mark tasks as priority
+  - I want to be able to delete tasks and mark them as complete
+
+## 1.5. Wireframes
+### 1.6. Desktop & Mobile Wireframes
+
+## 2. Features
 ### Adding Tasks to the Task List
 - A large text input field that allows the user to enter a new task to add to the 'incomplete' task list.
 
@@ -132,11 +141,11 @@ In terms of user experince, I really wanted to keep things as clean as possible.
 - Almost every interaction a user makes with the To-Do list provides some sort of feedback. Most notibly, when a task is marked as complete a 'ding' sound will play. The purpose for this is to invoke a strong positive response from the user and encourange them to add and complete more tasks.
 
 
-## Future Features
+## 3. Future Features
 - The ability to create additional lists for seperate groups of tasks 
 - Reorder tasks via click and drag or drag and drop
 
-## Technology Used
+## 4. Technology Used
 ### HTML
 > Used to structure my webpage.
 
@@ -149,10 +158,10 @@ In terms of user experince, I really wanted to keep things as clean as possible.
 ### Font Awesome
 > Used for the title icon.
 
-## Testing 
-### General Testing
+## 5. Testing 
+### 5.1. General Testing
 <details>
-<summary>Testing Table</summary>
+<summary>Testing Table (Click to expand)</summary>
 
 | What we are testing | How we test it | What we expect to happen | Result |
 |--|--|--|--|
@@ -188,11 +197,11 @@ In terms of user experince, I really wanted to keep things as clean as possible.
 
 </details>
 
-### Peer Code Review
+### 5.2. Peer Code Review
 > Project submitted for peer code review to Alan, my Code Institute Mentor, and to a more experinced engineer friend of mine.
 > Only noticable issue reported was not needing a ./ for the JavaScript file location in the index.html file.
 
-### User Tests
+### 5.3. User Tests
 > 4 users were asked to attempt the following and their scores were averaged to give the following results:
 
 | Test | Result |
@@ -201,7 +210,7 @@ In terms of user experince, I really wanted to keep things as clean as possible.
 | Set tasks with due dates | 100% |
 | Add tasks to the list and reload the page to see if the tasks save correctly | 100% |
 
-## Validator & Contrast Testing
+## 5.4. Validator & Contrast Testing
 ### HTML 
 No errors when passing code through the W3C validator.
 
@@ -216,7 +225,7 @@ No errors when passing the stylesheet through the validator.
 ### JavaScript 
 ![JsHint Validator Testing](assets/images/readme-images/Screenshot_32.png)
 
-### Accessibility 
+### 5.5 Accessibility 
 The to-do list was tested by the WAVE Web Accessibility Evaluation Tool.
 
 WAVE Report - index.html
@@ -227,7 +236,7 @@ WAVE Contrast Report - index.html
 
 ![WAVE Report - index.html](assets/images/readme-images/Screenshot_36.png)
 
-## Google Lighhouse Testing
+## 5.6. Google Lighhouse Testing
 ### Desktop
 ![Page speed test](assets/images/readme-images/Screenshot_24.png)
 
@@ -235,7 +244,7 @@ WAVE Contrast Report - index.html
 ![Page speed test mobile](assets/images/readme-images/Screenshot_23.png)
 
 
-## Bugs
+## 6. Bugs
 ### Fixed Bugs 
 - After deployment the complete task notification sound was not playing. I had .. at the start of the file path name for the audio file. I changed this to . and it fixed the issue.
 - The editable title was not showing on the iphone browser on the deployed version of the app. I believe this issue was happening due to compatability issues with a h1 having the contenteditable attribute. To fix this, I changed the h1 to a p element and added a function that will push a default title if the #mainTitle element is empty. 
@@ -243,9 +252,9 @@ WAVE Contrast Report - index.html
 ### Unfixed Bugs
 - No unfixed bugs on the final deployment
 
-## Credits
+## 7. Credits
 
-### Content & Resources
+### 7.1. Content & Resources
 - How to clear a text field using JS: https://stackoverflow.com/questions/14837466/clearing-a-text-field-on-button-click
 - Used for help on how to add an HTML element is a class list: https://www.shecodes.io/athena/3913-how-to-add-a-class-to-an-html-element-in-javascript#:~:text=In%20JavaScript%2C%20you%20can%20add,class%20to%20the%20classList%20property.&text=This%20code%20retrieves%20the%20element,myClass"%20to%20the%20classList%20property.
 - How to set a HTML attribute via JavaScript: https://www.w3schools.com/jsref/met_element_setattribute.asp
@@ -258,14 +267,14 @@ WAVE Contrast Report - index.html
 - Using parseInt to convert a value into a number: https://stackoverflow.com/questions/17388503/how-to-save-a-number-into-localstorage-that-increments-each-time-the-user-enters
 - How to save data locally: https://www.geeksforgeeks.org/how-to-save-data-in-local-storage-in-javascript/
 
-### Media
+### 7.2. Media
 - Font awesome icon used: https://fontawesome.com/icons/list?f=classic&s=solid
 
-### Acknowledgements
+### 7.3. Acknowledgements
 > My mentor Alan Bushell, who provided amazing constructive feedback and clear areas for improvement to improve the entire project.
 > I had help from a Code Institute tutor who helped me create unqiue task Ids and parse data to needed elements.
 
-## Deployment
+## 8. Deployment
 - The app was deployed to Github pages. The steps to deploy are as follows:
  1. In the GitHub respository, navigate to the setting tab
  2. From the source section drop-down menu, select the 'Master' or 'Main' branch

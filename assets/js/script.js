@@ -270,7 +270,7 @@ function dueDateChecker() {
 }
 
 /**
- * Calcualtes the number of tasks left and updates the counter
+ * Calculates the number of tasks left and updates the counter
  */
 function tasksLeft() {
     let tasksLeft = currentTasks.getElementsByTagName("li");
@@ -281,7 +281,7 @@ function tasksLeft() {
 }
 
 /**
- * Calcualtes the number of tasks completed and updates the counter
+ * Calculates the number of tasks completed and updates the counter
  */
 function tasksCompleted() {
     let completedTasks = document.getElementById("completed-tasks-list").getElementsByTagName("li");
