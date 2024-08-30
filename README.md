@@ -56,7 +56,13 @@ In terms of user experince, I really wanted to keep things as clean as possible.
   - I want to be able to delete tasks and mark them as complete
 
 ## 1.5. Wireframes
-### 1.6. Desktop & Mobile Wireframes
+### Desktop 
+
+![Desktop Wireframe](assets/images/readme-images/Screenshot_37.png)
+
+### Mobile
+
+![Mobile Wireframe](assets/images/readme-images/Screenshot_38.png)
 
 ## 2. Features
 ### Adding Tasks to the Task List
