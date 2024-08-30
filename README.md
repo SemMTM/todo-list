@@ -27,8 +27,7 @@ The purpose of this app is to allow a user to easily keep track of tasks that th
 ### 1.1. Pre-project Planning
 For project 2 I decided I wanted to challenge myself and create something that wasn't in one of the suggested projects. I came to the idea of a to-do list as this is something I use regularly and it would really test my abilities with JavaScript as I have not done anything like this previously.
 
-There were a few key project goals:
-
+Key project goals:
 - Have a due date and priority tasks feature
 - Counters to show remaining tasks
 - Save task data locally so the user does not have to re-enter their tasks each time 
