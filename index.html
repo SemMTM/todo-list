@@ -26,7 +26,8 @@
             </div>
 
             <div id="row">
-                <input type="text" id="inputBox" placeholder="Add a task">
+                <label for="inputBox" class="hidden">Task Input Box</label>
+                <input type="text" id="inputBox" placeholder="Add a task" aria-label="enter new task">
                 <button id="add-btn" onclick="addTask()" aria-label="add a task to the to do list">Add</button>
             </div>
 
@@ -61,10 +62,11 @@
             <div id="date-container-inner" class="container-inner">
                 <h5>Do you want to set a due date?</h5><i class="fa-solid fa-x" id="close-pop-up" onclick="closeDatePopUp()"></i>
                 <span id="date-message">Please select a date</span>
-                <input type="date" id="task-date">
+                <label for="task-date" class="hidden">Date Select</label>
+                <input type="date" id="task-date" aria-label="select task due date">
                 <div class="buttons-container">
-                    <button class="btn" id="set-priority-btn" onclick="setPriority()">Set/Remove Priority</button>
-                    <button class="yesbtn btn" id="set-date-btn" onclick="taskDueDate()">Set Date</button>
+                    <button class="btn" id="set-priority-btn" onclick="setPriority()" aria-label="Set/Remove Priority">Set/Remove Priority</button>
+                    <button class="yesbtn btn" id="set-date-btn" onclick="taskDueDate()" aria-label="Add task due date">Set Date</button>
                 </div>
             </div>
         </div>
@@ -76,8 +78,8 @@
             <div class="container-inner">
                 <h5>Do you want to delete this task?</h5>
                 <div class="buttons-container">
-                    <button class="btn" onclick="closeDeletePopUp()">No</button>
-                    <button class="btn" id="delete-task-btn" onclick="deleteTask(event)">Delete Task</button>
+                    <button class="btn" onclick="closeDeletePopUp()" aria-label="Don't delete task">No</button>
+                    <button class="btn" id="delete-task-btn" onclick="deleteTask(event)" aria-label="delete task">Delete Task</button>
                 </div>
             </div>
         </div>

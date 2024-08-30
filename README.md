@@ -151,39 +151,42 @@ In terms of user experince, I really wanted to keep things as clean as possible.
 
 ## Testing 
 ### General Testing
-| Test | Result |
-|--|--|
-| Website is responsive on different viewport sizes | Pass |
-| Loads correctly on multiple browsers | Pass |
-| All text is legible on different screen sizes and pages | Pass |
-| All forms have client side validation and need information before they can be submitted | Pass |
-| Tasks are added to the list on button click or enter press | Pass |
-| Unique task IDs are generated correctly and saved | Pass |
-| Task ID parsing to selected elements on function call | Pass |
-| Tasks counter updates when tasks sate changes | Pass |
-| Correct task is deleted when delete is pressed | Pass |
-| Task are put into the correct list depending on if they have been marked as complete or not | Pass |
-| Local data save and retrieval work | Pass |
-| Task auto ordering works correctly | Pass |
-| Task complete notification plays when a task is marked as complete | Pass |
-| Title can be edited and is saved | Pass |
-| :onhover for all relevant elements works correctly | Pass |
-| Set due date pop-up appears when ! button is pressed | Pass |
-| Set due date pop-up is styled and centered correctly | Pass |
-| Due date is set on the correct task when date is selected and 'Set Date' is pressed | Pass |
-| Date select input works correctly and alert is shown if not date is selected | Pass |
-| Priority tasks are outlined and moved to the top of the tasks list  | Pass |
-| Correct task is marked as priority when Set Priority button is pressed | Pass |
-| When a date is set, the due date is shown under the task and 'Due in...' counter loads correctly | Pass |
-| 'Due in..' reminder updates live and changes colour when conditions are met | Pass |
-| Delete task pop up is closed when either buttons are pressed | Pass |
-| Due date/set priority pop up is closed when X or any button is pressed | Pass | 
-| Completed tasks cannot be set as priority or with a due date | Pass |
-| Priority is removed once a task is marked as complete | Pass |
-| Completed tasks are not saved. This is for list organisation and clean-up | Pass |
-| Due dates appear correctly on mobile | Pass |
-| Set date pop-up appear correctly on mobile | Pass |
-| Add a task input clears after new task is added | Pass |
+<details>
+<summary>Testing Table</summary>
+
+| What we are testing | How we test it | What we expect to happen | Result |
+|--|--|--|--|
+| Website is responsive on different viewport sizes | Open app on different size screens | Site is responsive | Pass |
+| Loads correctly on multiple browsers | Load app on multiple browsers (Opera, Chrome and Safari) | App loads with no issues | Pass |
+| All text is legible on different screen sizes and pages | Open app on mobile and desktop | All text sizing is correct | Pass |
+| All forms have client side validation and need information before they can be submitted | Submit forms with no information entered | A please enter x alert | Pass |
+| Tasks are added to the list on button click or enter press | Enter a new task and press "Add" or enter | Task is added to the to do list | Pass |
+| Unique task IDs are generated correctly and saved | Create a few tasks, refresh the page, add more tasks, refresh again, then check all task ids to see if they are unique | Unique task IDs are generated and dont reset after refresh | Pass |
+| Task ID parsing to selected elements on function call | Add a task, press the "!" button, the use inspect element to check the data attribute on the "!" button, the delete button and the "Set/Remove Priority" Button. | Task IDs are parsed to the correct elements | Pass |
+| Tasks counter updates when tasks sate changes | Add a few tasks, mark them as complete, delete some, and mark some as priority | Task counter updates accordingly | Pass |
+| Correct task is deleted when delete is pressed | Delete a task | Selected task is deleted | Pass |
+| Task are put into the correct list depending on if they have been marked as complete or not | Mark a task as complete | It is moved to the "completed" task list | Pass |
+| Local data save and retrieval work | Add a few tasks and refresh the browser. Check tasks are there after refresh, check counter and task IDs | Everything saves and retreives as expected | Pass |
+| Task complete notification plays when a task is marked as complete | Mark a task as complete | Complete notification plays | Pass |
+| Title can be edited and is saved after an action on the to-do list | Edit title, add a task and refresh the page | Title can be edited and is saved after action | Pass |
+| Set due date pop-up appears when ! button is pressed | Press ! button | Set due date pop up appears | Pass |
+| Set due date pop-up is styled and centered correctly | Press ! button | Set due date pop up appears and flex box is applied correctly | Pass |
+| Due date is set on the correct task when date is selected and 'Set Date' is pressed | Press ! button and set a date | Date is set on the correct task | Pass |
+| Date select input works correctly and alert is shown if not date is selected | Press "Set Date" without selecting a due date | "Please select a date" alert is shown | Pass |
+| Priority tasks are outlined and moved to the top of the tasks list | Make 3 tasks and set 2 as priority | Priority tasks are moved to the top of the list and are outlined | Pass |
+| Correct task is marked as priority when Set Priority button is pressed | Create 2 tasks: "Task 1" & "Task 2". Set task 2 as priority | Task 2 is marked as priority | Pass |
+| When a date is set, the due date is shown under the task and 'Due in...' counter loads correctly | Set a task with a due date | Due date and counter displays correctly | Pass |
+| 'Due in..' reminder updates live and changes colour when conditions are met | Set 3 tasks with 3 due dates. 1 for a day already passed, one due tomorrow and one due in 9 days and check the dates the day after | The correct "Due in..." dates are given and are updated the day after | Pass |
+| Delete task pop up is closed when either buttons are pressed | Open delete task pop-up and press either button | Pop-up closes on button press | Pass |
+| Due date/set priority pop up is closed when X or any button is pressed | Open due date pop-up and close it by pressing "X" | Pop-up closes on X press | Pass | 
+| Completed tasks cannot be set as priority or with a due date | Mark a task as complete and press the ! button | Pop-up does not show on ! button press | Pass |
+| Priority is removed once a task is marked as complete | Mark a task as priority, then mark it as complete | Red outline is removed and prority task counter is updated | Pass |
+| Completed tasks are not saved. This is for list organisation and clean-up | Mark a task as complete then refresh the browser | Completed task is removed after refresh | Pass |
+| Due dates appear correctly on mobile | Set tasks with due dates on mobile | Task due dates are formatted to appear correctly on mobile | Pass |
+| Set date pop-up appear correctly on mobile | Open set date pop-up on mobile | Pop-up appears correctly | Pass |
+| Add a task input clears after new task is added | Add a new task | Input is cleared | Pass |
+
+</details>
 
 ### Peer Code Review
 > Project submitted for peer code review to Alan, my Code Institute Mentor, and to a more experinced engineer friend of mine.
@@ -198,7 +201,7 @@ In terms of user experince, I really wanted to keep things as clean as possible.
 | Set tasks with due dates | 100% |
 | Add tasks to the list and reload the page to see if the tasks save correctly | 100% |
 
-## Validator Testing
+## Validator & Contrast Testing
 ### HTML 
 No errors when passing code through the W3C validator.
 
@@ -211,14 +214,18 @@ No errors when passing the stylesheet through the validator.
 
 
 ### JavaScript 
-No errors when passing script.js through the Jshint validator
-- There are 22 functions in this file.
-- Function with the largest signature take 1 arguments, while the median is 0.
-- Largest function has 32 statements in it, while the median is 3.
-- The most complex function has a cyclomatic complexity value of 7 while the median is 1.
+![JsHint Validator Testing](assets/images/readme-images/Screenshot_32.png)
 
 ### Accessibility 
-Fonts and colors used are easily to read and accessibility has been tested on google speed test
+The to-do list was tested by the WAVE Web Accessibility Evaluation Tool.
+
+WAVE Report - index.html
+
+![WAVE Report - index.html](assets/images/readme-images/Screenshot_35.png)
+
+WAVE Contrast Report - index.html
+
+![WAVE Report - index.html](assets/images/readme-images/Screenshot_36.png)
 
 ## Google Lighhouse Testing
 ### Desktop

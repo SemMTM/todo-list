@@ -51,7 +51,6 @@ function addTask() {
         //Assigns each new task a unique ID
         newListItem.setAttribute("id", `taskid${totalTasksNumber}`);
         saveTaskIds();
-        console.log(totalTasksNumber);
         
         //Add Delete Button
         newListItem.appendChild(deleteTask);
